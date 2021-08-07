@@ -1,0 +1,70 @@
+﻿<Page x:Class="baseline_system.Pages.PageLogin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:baseline_system.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageLogin">
+
+    <Page.Resources>
+        <VisualBrush x:Key="MyVisualBrush" TileMode="Tile" Viewport="0,0,50,50" ViewportUnits="Absolute" Viewbox="0,0,50,50" ViewboxUnits="Absolute">
+            <VisualBrush.Visual>
+                <Grid>
+                    <Path Data="M 0 50 L 50 0" Stroke="#626F73" />
+                    <Path Data="M 0 0 L 15 25" Stroke="#626F73" />
+                </Grid>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource MyVisualBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="5" Style="{DynamicResource BorderStyle}">
+                <Grid Margin="0">
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="10" Padding="10" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="Hallo" />
+
+                    <TextBlock Grid.Row="1" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPageUsername}" />
+                    <TextBox x:Name="userLoginField" Grid.Row="2" MinWidth="230" Margin="10,0,10,0" FontSize="19" Style="{DynamicResource TextBoxStyle}" Text="Binding userLoginField}" />
+
+                    <TextBlock Grid.Row="3" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPagePassword}" />
+                    <PasswordBox x:Name="userPasswordField" Grid.Row="4" Margin="10,0,10,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
+
+                    <Grid Grid.Row="5" Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Button Grid.Column="0" Margin="0,0,0,0" Content="user rLoginPageSignIn}" Style="{DynamicResource ButtonStyle}" Visibility="{Binding Visibility}" />
+                        <Button Grid.Column="1" Margin="10,0,0,0" Content="org rRegistration}" Style="{DynamicResource ButtonStyle}" />
+
+                        <Button Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0" Content="no rRegistration}" Style="{DynamicResource ButtonStyle}" />
+                    </Grid>
+                    <TextBlock Grid.Row="6" x:Name="errorMsg" Visibility="Collapsed" Text="error msg" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Center" Margin="0" />
+                    <!--<Button Grid.Row="5" Margin="10,10,10,0"  Content="DynamicResource rLoginPageSignIn}" Style="{DynamicResource ButtonStyle}" Visibility="{Binding Visibility}" />
+                <Button Grid.Row="6" Margin="10,10,10,10"  Content="DynamicResource rRegistration}" Style="{DynamicResource ButtonStyle}" />-->
+                </Grid>
+            </Border>
+        </StackPanel>
+        
+        
+        
+        <TextBlock x:Name="Version" Opacity="0.5" Text="v 0.01" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Right" Margin="10" />
+    </Grid>
+</Page>

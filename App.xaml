@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:baseline_system"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="Resources/ScrollbarStyle.xaml"/>
+                <ResourceDictionary Source="Resources/ControlButtons.xaml"/>
+                <ResourceDictionary Source="Resources/Localization/RU.xaml"/>
+                <ResourceDictionary Source="Resources/Localization/EN.xaml"/>
+                <ResourceDictionary Source="Resources/Theme/Light.xaml"/>
+                <ResourceDictionary Source="Resources/Theme/Dark.xaml"/>-->
+                <ResourceDictionary Source="Resources/style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

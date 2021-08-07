@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:baseline_system"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Style="{DynamicResource GridStyle}">
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Source="Pages/PageLogin.xaml" Grid.Row="1"/>
     </Grid>
 </Window>
