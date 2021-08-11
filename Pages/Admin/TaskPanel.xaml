@@ -1,0 +1,53 @@
+﻿<Page x:Class="baseline_system.Pages.Admin.TaskPanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:baseline_system.Pages.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Loaded="Page_Loaded"
+      Title="TaskPanel">
+
+    <Grid  Style="{DynamicResource GridStyle}">
+        <DataGrid x:Name="datagrid" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle}" HeadersVisibility="Column" SelectionChanged="datagrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path= ID}" HeaderStyle="{DynamicResource DataGridHeaderStyle}"  Width="*" IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="ID" HorizontalAlignment="Stretch" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path= Theme}" HeaderStyle="{DynamicResource DataGridHeaderStyle}"  Width="*" IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="DynamicResource rAPE_Theme}" HorizontalAlignment="Stretch" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path= State_task}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="DynamicResource rAPE_StateTask}" HorizontalAlignment="Stretch" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path= ID_project}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="DynamicResource rAPE_IDProject}" HorizontalAlignment="Stretch" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path= ID_users}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="DynamicResource rAPE_IDUsers}" HorizontalAlignment="Stretch" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding Path= About}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="DynamicResource rAPE_About}" HorizontalAlignment="Stretch" />
+                    </DataGridTextColumn.Header>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

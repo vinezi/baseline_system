@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using baseline_system.Pages.Admin;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace baseline_system.Pages
 {
@@ -23,6 +13,21 @@ namespace baseline_system.Pages
         public PageLogin()
         {
             InitializeComponent();
+        }
+
+        private void LoginUser_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageMainFrame());
+        }
+
+        private void Admin_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageAdminPanel());
+        }
+
+        private void Reg_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageRegistration());
         }
     }
 }

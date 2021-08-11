@@ -51,20 +51,18 @@
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
-                        <Button Grid.Column="0" Margin="0,0,0,0" Content="user rLoginPageSignIn}" Style="{DynamicResource ButtonStyle}" Visibility="{Binding Visibility}" />
-                        <Button Grid.Column="1" Margin="10,0,0,0" Content="org rRegistration}" Style="{DynamicResource ButtonStyle}" />
+                        <Button Grid.Column="0" Margin="0,0,0,0" Content="user rLoginPageSignIn}" Style="{DynamicResource ButtonStyle}" Visibility="{Binding Visibility}" Click="LoginUser_Click" />
+                        <Button Grid.Column="1" Margin="10,0,0,0" Content="org rRegistration}" Style="{DynamicResource ButtonStyle}" Height="16" VerticalAlignment="Bottom" Click="Admin_Click" />
 
-                        <Button Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0" Content="no rRegistration}" Style="{DynamicResource ButtonStyle}" />
+                        <Button Grid.Row="1" Grid.ColumnSpan="2" Margin="0,10,0,0" Content="no rRegistration}" Style="{DynamicResource ButtonStyle}" Click="Reg_Click" />
                     </Grid>
-                    <TextBlock Grid.Row="6" x:Name="errorMsg" Visibility="Collapsed" Text="error msg" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Center" Margin="0" />
-                    <!--<Button Grid.Row="5" Margin="10,10,10,0"  Content="DynamicResource rLoginPageSignIn}" Style="{DynamicResource ButtonStyle}" Visibility="{Binding Visibility}" />
-                <Button Grid.Row="6" Margin="10,10,10,10"  Content="DynamicResource rRegistration}" Style="{DynamicResource ButtonStyle}" />-->
+                    <TextBlock Grid.Row="6" x:Name="errorMsg" Opacity=".8"  Visibility="Visible" Text="error msg" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Center" Margin="0" />
                 </Grid>
             </Border>
         </StackPanel>
         
         
         
-        <TextBlock x:Name="Version" Opacity="0.5" Text="v 0.01" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Right" Margin="10" />
+        <TextBlock x:Name="Version" Opacity="0.5" Text="v 0.2.0" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Right" Margin="10" />
     </Grid>
 </Page>

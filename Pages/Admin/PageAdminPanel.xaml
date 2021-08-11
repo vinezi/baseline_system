@@ -1,0 +1,32 @@
+﻿<Page x:Class="baseline_system.Pages.Admin.PageAdminPanel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:baseline_system.Pages.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageAdminPanel">
+
+    <Grid>
+        <TabControl FontWeight="Light" Style="{DynamicResource TabControlStyle}">
+            <TabControl.Resources>
+                <Style TargetType="{x:Type TabPanel}">
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="DynamicResource rAPTabProject}" Style="{DynamicResource TabItemStyle}">
+                <Frame Source="ProjectPanel.xaml"/>
+            </TabItem>
+            <TabItem Header="DynamicResource rAPTabTask}" Style="{DynamicResource TabItemStyle}">
+                <Frame Source="TaskPanel.xaml"/>
+            </TabItem>
+            <TabItem Header="DynamicResource rAPTabUser}" Style="{DynamicResource TabItemStyle}">
+                <Frame Source="UserPanel.xaml"/>
+            </TabItem>
+            <!--<TabItem Header="DynamicResource rAdminPanelTabEdition}" Style="{DynamicResource TabItemStyle}">
+                <Frame Source="AdminEditionControl.xaml"/>
+            </TabItem>-->
+        </TabControl>
+    </Grid>
+</Page>

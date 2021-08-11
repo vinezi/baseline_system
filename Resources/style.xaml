@@ -9,7 +9,7 @@
     <!--<SolidColorBrush x:Key="MC_DarkOpacity" Color="#77626F73"/>-->
     <SolidColorBrush x:Key="MC_Light" Color="#B8BBA8"/>
 
-    <SolidColorBrush x:Key="TC_Main" Color="White"/>
+    <SolidColorBrush x:Key="TC_Main" Color="#B7D2D6"/>
     <SolidColorBrush x:Key="TC_Additional" Color="#B8BBA8"/>
     <!--<SolidColorBrush x:Key="TC_Additional" Color="#626F73"/>-->
 
@@ -20,6 +20,14 @@
 
     
     <Style x:Key="GridStyle" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource MC_Dark}"/>
+    </Style>
+
+    <Style x:Key="GridAccentStyle" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource AC_Dark}"/>
+    </Style>
+
+    <Style x:Key="WindowStyle" TargetType="Window">
         <Setter Property="Background" Value="{StaticResource MC_Dark}"/>
     </Style>
 
@@ -59,7 +67,7 @@
 
     <Style x:Key="ButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{StaticResource MC_Light}"/>
+        <Setter Property="Foreground" Value="{StaticResource TC_Main}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -75,22 +83,127 @@
                 <Setter Property="Foreground" Value="{StaticResource AC_Light}" />
             </Trigger>
 
-            <Trigger Property="Focusable" Value="True">
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="Red" />
+            </Trigger>
+            <!--<Trigger Property="ForceCursor" Value="True">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="Foreground" Value="{StaticResource AC_Light}" />
-            </Trigger>
+            </Trigger>-->
         </Style.Triggers>
     </Style>
 
     <Style x:Key="BorderStyle" TargetType="Border">
         <Setter Property="BorderBrush" Value="{StaticResource Border}" />
-        <Setter Property="Background" Value="{StaticResource MC_DarkOpacity}"/>
+        <!--<Setter Property="Background" Value="{StaticResource MC_DarkOpacity}"/>-->
+        <Setter Property="Background" Value="#3d454f"/>
      
         <!-- цвет закраски окна-->
     </Style>
 
 
 
+
+
+
+
+
+
+
+
+
+
+    <!--/////////////////////////new-->
+
+
+
+    <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
+        
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{StaticResource MC_Dark}" />
+                <Setter Property="Foreground" Value="{StaticResource TC_Additional}" />
+                
+                <Setter Property="BorderBrush" Value="{x:Null}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--<Style TargetType="{x:Type DataGridRow}">
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{x:Null}" />
+                <Setter Property="BorderBrush" Value="{x:Null}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>-->
+
+
+
+    <Style x:Key="DataGridStyle" TargetType="DataGrid">
+        <Setter Property="Foreground" Value="{StaticResource TC_Additional}" />
+        <!--  цвет всех букв  -->
+        <Setter Property="Background" Value="{StaticResource AC_Dark}" />
+        <!--  цвет задней подложки (не ячейки)  -->
+        <Setter Property="RowBackground" Value="{StaticResource MC_Dark}" />
+        <!--  цвет ячеек  -->
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource AC_Light}" />
+    </Style>
+    
+    <Style x:Key="DataGridHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Foreground" Value="black" />
+        <!--  цвет букв в заголовке  -->
+        <Setter Property="Background" Value="{StaticResource AC_Light}" />
+        <!--  цвет подложки header  -->
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+    
+    <Style x:Key="TabControlStyle" TargetType="TabControl">
+        <Setter Property="Background" Value="{StaticResource MC_Dark}" />
+        <!-- цвет закраски окна-->
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+
+    <Style x:Key="TabItemStyle" TargetType="TabItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Name="Border" BorderThickness="0" BorderBrush="{StaticResource MC_Light}" CornerRadius="0" Margin="1 0">
+                        <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                          ContentSource="Header" Margin="10,2"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="{StaticResource AC_Light}"/>
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource MC_Dark}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource TC_Main}"/>
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource MC_Dark}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--//////////////////////new^-->
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
     <!--<Style x:Key="DataGridStyle" TargetType="DataGrid">
         <Setter Property="Foreground" Value="White" />
