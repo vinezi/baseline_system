@@ -10,38 +10,44 @@ namespace baseline_system.DialogBox
     /// </summary>
     public partial class ProjectEdit : Window
     {
-        SqlDataAdapter adapter;
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        public ProjectEdit(bool isAuto, String ID)
+        public ProjectEdit(String ID)
         {
             InitializeComponent();
-            if (isAuto)
-            {
-                deleteBtn.IsEnabled = false;
-                changeBtn.IsEnabled = false;
-            }
+            deleteBtn.IsEnabled = false;
+            changeBtn.IsEnabled = false;
             IDEdit.Text = ID;
         }
 
+        public ProjectEdit(String ID, String Name_project, String State_project, String Author, String About)
+        {
+            InitializeComponent();
+            IDEdit.Text = ID;
+            NameProjectEdit.Text = Name_project;
+            StateProjectEdit.Text = State_project;
+            AuthorEdit.Text = Author;
+            AboutEdit.Text = About;
+        }
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            /*using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                if (GenresMW.Text.Length != 0)
+                if (IDEdit.Text.Length != 0 && NameProjectEdit.Text.Length != 0 && StateProjectEdit.Text.Length != 0 && AuthorEdit.Text.Length != 0)
                 {
-                    SqlCommand cmd = new SqlCommand("insert into Project values(@Genres)", connection);
+                    SqlCommand cmd = new SqlCommand("insert into Project values(@Name_project,@State_project,@Author,@About)", connection);
                     connection.Open();
-                    cmd.Parameters.AddWithValue("@Genres", GenresMW.Text);
+                    cmd.Parameters.AddWithValue("@Name_project", NameProjectEdit.Text);
+                    cmd.Parameters.AddWithValue("@State_project", StateProjectEdit.Text);
+                    cmd.Parameters.AddWithValue("@Author", AuthorEdit.Text);
+                    cmd.Parameters.AddWithValue("@About", AboutEdit.Text);
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    ShowProject();
                 }
                 else
                 {
                     MessageBox.Show("Введите значения");
                 }
             }
-            */
             this.DialogResult = true;
         }
 
@@ -52,10 +58,10 @@ namespace baseline_system.DialogBox
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    /*SqlCommand command = new SqlCommand("sp_DeleteGenres", connection); //Вместо запроса передается название процедуры
+                    SqlCommand command = new SqlCommand("sp_DeleteProject", connection); //Вместо запроса передается название процедуры
                     command.CommandType = System.Data.CommandType.StoredProcedure; //Указывается тип команды
                     command.Parameters.Add(new SqlParameter("@ID", Int32.Parse(IDEdit.Text))); //Передаются параметры
-                    command.ExecuteNonQuery();*/
+                    command.ExecuteNonQuery();
                     connection.Close();
                 }
             }
@@ -68,20 +74,26 @@ namespace baseline_system.DialogBox
 
         private void Change_Click(object sender, RoutedEventArgs e)
         {
-            /*if (IdMW.Text.Length > 0 && GenresMW.Text.Length != 0)
+            if (IDEdit.Text.Length != 0 && NameProjectEdit.Text.Length != 0 && StateProjectEdit.Text.Length != 0 && AuthorEdit.Text.Length != 0)
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("sp_UpdateGenres", connection); //Вместо запроса передается название процедуры
+                    SqlCommand command = new SqlCommand("sp_UpdateProject", connection); //Вместо запроса передается название процедуры
                     command.CommandType = System.Data.CommandType.StoredProcedure; //Указывается тип команды
-                    command.Parameters.Add(new SqlParameter("@ID", Int32.Parse(IdMW.Text))); //Передаются параметры
-                    command.Parameters.Add(new SqlParameter("@Genres", GenresMW.Text));
+                    command.Parameters.Add(new SqlParameter("@ID", Int32.Parse(IDEdit.Text)));
+                    command.Parameters.Add(new SqlParameter("@Name_project", NameProjectEdit.Text));
+                    command.Parameters.Add(new SqlParameter("@State_project", StateProjectEdit.Text));
+                    command.Parameters.Add(new SqlParameter("@Author", AuthorEdit.Text));
+                    command.Parameters.Add(new SqlParameter("@About", AboutEdit.Text));
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
             }
-            */
+            else
+            {
+                MessageBox.Show("Введите значения");
+            }
             this.DialogResult = true;
         }
     }

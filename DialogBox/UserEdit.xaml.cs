@@ -10,38 +10,45 @@ namespace baseline_system.DialogBox
     /// </summary>
     public partial class UserEdit : Window
     {
-        SqlDataAdapter adapter;
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-        public UserEdit(bool isAuto, String ID)
+        public UserEdit(String ID)
         {
             InitializeComponent();
-            if (isAuto)
-            {
-                deleteBtn.IsEnabled = false;
-                changeBtn.IsEnabled = false;
-            }
+            deleteBtn.IsEnabled = false;
+            changeBtn.IsEnabled = false;
             IDEdit.Text = ID;
+        }
+
+        public UserEdit(String ID, String Name, String Login, String Password, String Admin_state)
+        {
+            InitializeComponent();
+            IDEdit.Text = ID;
+            NameEdit.Text = Name;
+            LoginEdit.Text = Login;
+            PasswordEdit.Text = Password;
+            AdminStateEdit.Text = Admin_state;
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            /*using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                if (GenresMW.Text.Length != 0)
+                if (IDEdit.Text.Length != 0 && NameEdit.Text.Length != 0 && LoginEdit.Text.Length != 0 && PasswordEdit.Text.Length != 0 && AdminStateEdit.Text.Length != 0)
                 {
-                    SqlCommand cmd = new SqlCommand("insert into Project values(@Genres)", connection);
+                    SqlCommand cmd = new SqlCommand("insert into Users values(@Name,@Login,@Password,@Admin_state)", connection);
                     connection.Open();
-                    cmd.Parameters.AddWithValue("@Genres", GenresMW.Text);
+                    cmd.Parameters.AddWithValue("@Name", NameEdit.Text);
+                    cmd.Parameters.AddWithValue("@Login", LoginEdit.Text);
+                    cmd.Parameters.AddWithValue("@Password", PasswordEdit.Text);
+                    cmd.Parameters.AddWithValue("@Admin_state", AdminStateEdit.Text);
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                    ShowProject();
                 }
                 else
                 {
                     MessageBox.Show("Введите значения");
                 }
             }
-            */
             this.DialogResult = true;
         }
 
@@ -52,10 +59,10 @@ namespace baseline_system.DialogBox
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    /*SqlCommand command = new SqlCommand("sp_DeleteGenres", connection); //Вместо запроса передается название процедуры
+                    SqlCommand command = new SqlCommand("sp_DeleteUsers", connection); //Вместо запроса передается название процедуры
                     command.CommandType = System.Data.CommandType.StoredProcedure; //Указывается тип команды
                     command.Parameters.Add(new SqlParameter("@ID", Int32.Parse(IDEdit.Text))); //Передаются параметры
-                    command.ExecuteNonQuery();*/
+                    command.ExecuteNonQuery();
                     connection.Close();
                 }
             }
@@ -68,20 +75,26 @@ namespace baseline_system.DialogBox
 
         private void Change_Click(object sender, RoutedEventArgs e)
         {
-            /*if (IdMW.Text.Length > 0 && GenresMW.Text.Length != 0)
+            if (IDEdit.Text.Length != 0 && NameEdit.Text.Length != 0 && LoginEdit.Text.Length != 0 && PasswordEdit.Text.Length != 0 && AdminStateEdit.Text.Length != 0)
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("sp_UpdateGenres", connection); //Вместо запроса передается название процедуры
-                    command.CommandType = System.Data.CommandType.StoredProcedure; //Указывается тип команды
-                    command.Parameters.Add(new SqlParameter("@ID", Int32.Parse(IdMW.Text))); //Передаются параметры
-                    command.Parameters.Add(new SqlParameter("@Genres", GenresMW.Text));
+                    SqlCommand command = new SqlCommand("sp_UpdateUsers", connection);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@ID", Int32.Parse(IDEdit.Text)));
+                    command.Parameters.Add(new SqlParameter("@Name", NameEdit.Text));
+                    command.Parameters.Add(new SqlParameter("@Login", LoginEdit.Text));
+                    command.Parameters.Add(new SqlParameter("@Password", PasswordEdit.Text));
+                    command.Parameters.Add(new SqlParameter("@Admin_state", AdminStateEdit.Text));
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
             }
-            */
+            else
+            {
+                MessageBox.Show("Введите значения");
+            }
             this.DialogResult = true;
         }
     }

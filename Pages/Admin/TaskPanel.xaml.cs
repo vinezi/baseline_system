@@ -38,36 +38,27 @@ namespace baseline_system.Pages.Admin
 
         private void datagrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            TaskEdit taskEdit;
             try
             {
                 var selectedRow = (DataRowView)datagrid.SelectedItem;
                 if (selectedRow != null)
-                    dialog(false, selectedRow.Row[0].ToString());
+                {
+                    taskEdit = new TaskEdit(selectedRow.Row[0].ToString(), selectedRow.Row[1].ToString(), selectedRow.Row[2].ToString(), selectedRow.Row[3].ToString(), selectedRow.Row[4].ToString(), selectedRow.Row[5].ToString());
+                    if (taskEdit.ShowDialog() == true)
+                        DataLoad();
+                }
             }
             catch (System.Exception)
             {
-                //MessageBox.Show(ex.ToString());
-                dialog(true, "auto");
+                taskEdit = new TaskEdit("auto");
+                if (taskEdit.ShowDialog() == true)
+                    DataLoad();
             }
             Keyboard.ClearFocus();
             datagrid.SelectedIndex = -1;
         }
 
-        private void dialog(bool isAuto, string argument)
-        {
-            TaskEdit taskEdit= new TaskEdit(isAuto, argument);
-            if (taskEdit.ShowDialog() == true)
-            {
-                //MessageBox.Show("true");
-                DataLoad();
-            }
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            DataLoad();
-        }
+        private void Page_Loaded(object sender, RoutedEventArgs e) { DataLoad(); }
     }
-
-
 }

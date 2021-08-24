@@ -8,7 +8,59 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageRegistration">
 
-    <Grid>
-        
+    <Page.Resources>
+        <VisualBrush x:Key="MyVisualBrush" TileMode="Tile" Viewport="0,0,50,50" ViewportUnits="Absolute" Viewbox="0,0,50,50" ViewboxUnits="Absolute">
+            <VisualBrush.Visual>
+                <Grid>
+                    <Path Data="M 0 50 L 50 0" Stroke="#626F73" />
+                    <Path Data="M 0 0 L 15 25" Stroke="#626F73" />
+                </Grid>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource MyVisualBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="5" Style="{DynamicResource BorderStyle}">
+                <Grid Margin="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Margin="5" Padding="5" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="Hallo" />
+
+                    <TextBlock Grid.Row="1" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPageUsername}" />
+                    <TextBox x:Name="userLoginField" Grid.Row="2" MinWidth="230" Margin="10,0,10,0" FontSize="19" Style="{DynamicResource TextBoxStyle}" Text="Binding userLoginField}" />
+
+                    <TextBlock Grid.Row="3" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPageUsername}" />
+                    <TextBox x:Name="userNameField" Grid.Row="4" MinWidth="230" Margin="10,0,10,0" FontSize="19" Style="{DynamicResource TextBoxStyle}" Text="Binding userLoginField}" />
+
+                    <TextBlock Grid.Row="5" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPagePassword}" />
+                    <PasswordBox x:Name="userPasswordField" Grid.Row="6" Margin="10,0,10,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
+
+                    <TextBlock Grid.Row="7" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPagePassword}" />
+                    <PasswordBox x:Name="userConfPasswordField" Grid.Row="8" Margin="10,0,10,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
+
+                    <Button Grid.Row="9" Margin="0,0,0,0" Content="user rLoginPageSignIn}" Style="{DynamicResource ButtonStyle}" Visibility="{Binding Visibility}" />
+                    <Button Grid.Row="10" Margin="10,0,0,0" Content="org rRegistration}" Style="{DynamicResource ButtonStyle}" Height="16" VerticalAlignment="Bottom" />
+
+                    <TextBlock Grid.Row="11" x:Name="errorMsg" Opacity=".8"  Visibility="Visible" Text="error msg" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Center" Margin="0" />
+                </Grid>
+            </Border>
+        </StackPanel>
+
+
+
     </Grid>
 </Page>

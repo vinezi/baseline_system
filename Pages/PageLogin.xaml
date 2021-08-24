@@ -63,6 +63,6 @@
         
         
         
-        <TextBlock x:Name="Version" Opacity="0.5" Text="v 0.2.0" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Right" Margin="10" />
+        <!--<TextBlock x:Name="Version" Opacity="0.5" Text="v 0.2.0" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Right" Margin="10" />-->
     </Grid>
 </Page>

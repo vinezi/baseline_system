@@ -10,7 +10,7 @@
         FontSize="13"
         Style="{DynamicResource WindowStyle}"
         SizeToContent="WidthAndHeight"
-        MinHeight="235"
+        MinHeight="240"
         MinWidth="250"
         WindowStartupLocation="CenterScreen">
     <Grid Margin="10" >
@@ -39,10 +39,12 @@
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="2" Grid.Column="1" x:Name="StateTaskEdit" Text=""  FontSize="13" Margin="5 0 0 5"/>
 
         <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="3" Grid.Column="0" Text="ID Project: "/>
-        <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="3" Grid.Column="1" x:Name="IDProjectEdit" Text="" Margin="5 0 0 5"/>
+        <ComboBox  Grid.Row="3" Grid.Column="1" x:Name="IDProjectEdit" Height="22" VerticalAlignment="Center" Margin="5 0 0 5"/>
+        <!--<TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="3" Grid.Column="1" x:Name="IDProjectEdit" Text="" Margin="5 0 0 5"/>-->
 
         <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="4" Grid.Column="0" Text="ID User: "/>
-        <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="4" Grid.Column="1" x:Name="IDUserEdit" Text="" Margin="5 0 0 5"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" x:Name="IDUserEdit" Height="22" VerticalAlignment="Center" Margin="5 0 0 5"/>
+        <!--<TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="4" Grid.Column="1" x:Name="IDUserEdit" Text="" Margin="5 0 0 5"/>-->
 
         <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="5" Grid.Column="0" Text="About: "/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="5" Grid.Column="1" x:Name="AboutEdit" Text="" Margin="5 0 0 5"/>

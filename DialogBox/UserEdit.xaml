@@ -41,7 +41,12 @@
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="3" Grid.Column="1" x:Name="PasswordEdit" Text="" Margin="5 0 0 5"/>
 
         <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="4" Grid.Column="0" Text="Admis state: "/>
-        <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="4" Grid.Column="1" x:Name="AdmisStateEdit" Text="" Margin="5 0 0 5"/>
+        <!--<TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="4" Grid.Column="1" x:Name="AdminStateEdit" Text="" Margin="5 0 0 5"/>-->
+
+        <ComboBox SelectedItem="0"  x:Name="AdminStateEdit"  Grid.Row="4" Grid.Column="1" Margin="5 0 0 5" >
+            <ComboBoxItem Tag="False" Content="False"/>
+            <ComboBoxItem Tag="True" Content="True"/>
+        </ComboBox>
 
         <Grid Grid.ColumnSpan="2" Grid.Row="5" Style="{DynamicResource GridAccentStyle}">
             <Grid.ColumnDefinitions>

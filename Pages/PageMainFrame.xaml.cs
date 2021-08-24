@@ -1,4 +1,5 @@
-﻿using System;
+﻿using baseline_system.Pages.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,22 @@ namespace baseline_system.Pages
         public PageMainFrame()
         {
             InitializeComponent();
+        }
+
+        private void Setting_Click(object sender, RoutedEventArgs e)
+        {
+            //MainFrame.Content = new PageMainFrame();
+            MainFrame.Content = new PageSetting();
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            //MainFrame.Content = new ();
+        }
+
+        private void Admin_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new PageAdminPanel();
         }
     }
 }
