@@ -122,7 +122,7 @@
         
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{StaticResource MC_Dark}" />
+                <Setter Property="Background" Value="Red" />
                 <Setter Property="Foreground" Value="{StaticResource TC_Additional}" />
                 
                 <Setter Property="BorderBrush" Value="{x:Null}" />

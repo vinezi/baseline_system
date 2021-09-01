@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:baseline_system"
         mc:Ignorable="d"
+        MinHeight="350" MinWidth="400"
         Title="MainWindow" Height="450" Width="800">
     <Grid Style="{DynamicResource GridStyle}">
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Source="Pages/PageLogin.xaml" Grid.Row="1"/>

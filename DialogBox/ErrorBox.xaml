@@ -1,0 +1,24 @@
+﻿<Window x:Class="baseline_system.DialogBox.ErrorBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:baseline_system.DialogBox"
+        mc:Ignorable="d"
+        Title="Error" 
+        
+        FontSize="13"
+        Style="{DynamicResource WindowStyle}"
+        SizeToContent="WidthAndHeight"
+        MinHeight="130" MinWidth="250"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="uncnown error" x:Name="testTB" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0"/>
+        <Button Content="ok" VerticalAlignment="Bottom" IsCancel="True" Grid.Row="2"/>
+    </Grid>
+</Window>

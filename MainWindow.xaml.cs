@@ -23,6 +23,8 @@ namespace baseline_system
         public MainWindow()
         {
             InitializeComponent();
+            //ConsoleManager.Show();
+            //Console.WriteLine("Starting app...\n");
         }
     }
 }

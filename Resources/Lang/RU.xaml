@@ -2,5 +2,5 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:baseline_system.Resources.Lang"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
-    
+    <v:String x:Key="test">yyyy</v:String>
 </ResourceDictionary>

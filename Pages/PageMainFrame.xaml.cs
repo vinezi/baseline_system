@@ -24,6 +24,7 @@ namespace baseline_system.Pages
         public PageMainFrame()
         {
             InitializeComponent();
+            userName.Text = Properties.Settings.Default.currentUserName;
         }
 
         private void Setting_Click(object sender, RoutedEventArgs e)
