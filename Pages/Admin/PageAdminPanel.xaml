@@ -15,13 +15,13 @@
                     <Setter Property="HorizontalAlignment" Value="Left" />
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="DynamicResource rAPTabProject}" Style="{DynamicResource TabItemStyle}">
+            <TabItem Header="{DynamicResource rAPTabProject}" Style="{DynamicResource TabItemStyle}">
                 <Frame Source="ProjectPanel.xaml"/>
             </TabItem>
-            <TabItem Header="DynamicResource rAPTabTask}" Style="{DynamicResource TabItemStyle}">
+            <TabItem Header="{DynamicResource rAPTabTask}" Style="{DynamicResource TabItemStyle}">
                 <Frame Source="TaskPanel.xaml"/>
             </TabItem>
-            <TabItem Header="DynamicResource rAPTabUser}" Style="{DynamicResource TabItemStyle}">
+            <TabItem Header="{DynamicResource rAPTabUser}" Style="{DynamicResource TabItemStyle}">
                 <Frame Source="UserPanel.xaml"/>
             </TabItem>
             <!--<TabItem Header="DynamicResource rAdminPanelTabEdition}" Style="{DynamicResource TabItemStyle}">

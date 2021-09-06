@@ -57,5 +57,29 @@ namespace baseline_system.Properties {
                 this["currentUserName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string connectStrDef {
+            get {
+                return ((string)(this["connectStrDef"]));
+            }
+            set {
+                this["connectStrDef"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string connectStrCur {
+            get {
+                return ((string)(this["connectStrCur"]));
+            }
+            set {
+                this["connectStrCur"] = value;
+            }
+        }
     }
 }

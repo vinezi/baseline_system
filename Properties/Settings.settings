@@ -11,5 +11,11 @@
     <Setting Name="currentUserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">No Name</Value>
     </Setting>
+    <Setting Name="connectStrDef" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="connectStrCur" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -12,7 +12,7 @@ namespace baseline_system.DialogBox
     public partial class TaskEdit : Window
     {
         SqlDataAdapter adapter;
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static readonly string connectionString = Properties.Settings.Default.connectStrCur;
         public TaskEdit(String ID)
         {
             InitializeComponent();

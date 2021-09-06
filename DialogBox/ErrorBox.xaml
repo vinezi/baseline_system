@@ -18,7 +18,9 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="uncnown error" x:Name="testTB" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"  Grid.Column="1" Grid.Row="1" Margin="5 0">
+            <TextBlock Text="uncnown error" x:Name="testTB" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0"/>
+        </ScrollViewer>
         <Button Content="ok" VerticalAlignment="Bottom" IsCancel="True" Grid.Row="2"/>
     </Grid>
 </Window>

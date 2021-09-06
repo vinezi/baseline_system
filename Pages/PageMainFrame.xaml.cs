@@ -1,18 +1,8 @@
-﻿using baseline_system.Pages.Admin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using baseline_system.DialogBox;
+using baseline_system.Pages.Admin;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace baseline_system.Pages
 {
@@ -29,18 +19,31 @@ namespace baseline_system.Pages
 
         private void Setting_Click(object sender, RoutedEventArgs e)
         {
-            //MainFrame.Content = new PageMainFrame();
             MainFrame.Content = new PageSetting();
         }
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            //MainFrame.Content = new ();
+            MainFrame.Content = new PageSearch();
         }
 
         private void Admin_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new PageAdminPanel();
+            if (Properties.Settings.Default.admStatus == true)
+            {
+                MainFrame.Content = new PageAdminPanel();
+            }
+            else
+            {
+                ErrorBox errorBox = new ErrorBox("No access");
+                if (errorBox.ShowDialog() == true)
+                    _ = MessageBox.Show("i");
+            }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            _ = NavigationService.Navigate(new PageLogin());
         }
     }
 }

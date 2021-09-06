@@ -16,7 +16,7 @@ namespace baseline_system.Pages.Admin
     public partial class TaskPanel : Page
     {
         SqlDataAdapter adapter;
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static readonly string connectionString = Properties.Settings.Default.connectStrCur;
         public TaskPanel()
         {
             InitializeComponent();

@@ -9,47 +9,98 @@
       Title="PageSetting">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-       <TextBlock Grid.Row="0" Margin="10" Padding="10" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="Setting" />
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"  Grid.Column="1" Grid.Row="1">
+            <Grid Margin="10 0 0 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
 
-        <TextBlock Grid.Row="1" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="Login" />
-        <TextBox x:Name="userLoginField" Text="auf" Grid.Row="2" MinWidth="230" Margin="10,0,10,0" FontSize="19" Style="{DynamicResource TextBoxStyle}" IsReadOnly="True" />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Margin="10" Padding="10" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="Setting" />
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="3" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="name" />
-        <TextBox x:Name="userNameField" Text="auf" Grid.Row="4" MinWidth="230" Margin="10,0,10,0" FontSize="19" Style="{DynamicResource TextBoxStyle}" />
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="acc Setting" />
+                    
+                    <TextBlock Grid.Row="1" Margin="0,0,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="Login" />
+                    <TextBox x:Name="userLoginField" Grid.Row="2" MinWidth="230"  FontSize="19" Style="{DynamicResource TextBoxStyle}" IsReadOnly="True" />
 
-        <TextBlock Grid.Row="5" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rOldPassword}" />
-        <PasswordBox x:Name="userPasswordField" Grid.Row="6" Margin="10,0,10,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
+                    <TextBlock Grid.Row="3" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="name" />
+                    <TextBox x:Name="userNameField" Grid.Row="4" MinWidth="230" FontSize="19" Style="{DynamicResource TextBoxStyle}" />
 
-        <Grid Grid.Row="7" Margin="0 5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="5" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rOldPassword}" />
+                    <PasswordBox x:Name="userPasswordField" Grid.Row="6" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,5,5,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rnewPassword}" />
-            <PasswordBox x:Name="newPasswordField" Grid.Row="1" Grid.Column="0" Margin="10,0,5,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
+                    <Grid Grid.Row="7" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="5,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rConfPassword}" />
-            <PasswordBox x:Name="comfirmPasswordField" Grid.Row="1" Grid.Column="1" Margin="5,0,10,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
+                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rnewPassword}" />
+                        <PasswordBox x:Name="newPasswordField" Grid.Row="1" Grid.Column="0" Margin="0,0,5,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
 
-            <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10,0,0" Content="no rRegistration}" Style="{DynamicResource ButtonStyle}" Click="NewData_Click" />
-        </Grid>
-        <!--<TextBlock Grid.Row="6" x:Name="errorMsg" Opacity=".8"  Visibility="Visible" Text="error msg" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Center" Margin="0" />-->
+                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="5,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rConfPassword}" />
+                        <PasswordBox x:Name="comfirmPasswordField" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
 
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10, 0,15" Content="no rRegistration}" Style="{DynamicResource menuButton}" Click="NewData_Click"  />
+                    </Grid>
+                </Grid>
+
+
+
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="connection Setting" />
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Grid.Row="1" Grid.Column="0" x:Name="conectionStr" Text="auf" FontSize="13" Margin="0 10 5 0 " Style="{DynamicResource TextBoxStyle}" />
+                    <Button Grid.Row="1" Grid.Column="1" Margin="5,10,0,0" Content="no rRegistration}" Style="{DynamicResource menuButton}" Click="NewData_Click" />
+                </Grid>
+
+                <TextBlock Grid.Row="4" HorizontalAlignment="Center" Margin="0 10 0 10" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="language Setting" />
+
+
+                <ComboBox SelectedItem="0"  x:Name="AdminStateEdit"  Grid.Row="5" Grid.Column="1"  >
+                    <ComboBoxItem Tag="False" Content="False"/>
+                    <ComboBoxItem Tag="True" Content="True"/>
+                </ComboBox>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>

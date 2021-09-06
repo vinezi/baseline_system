@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace baseline_system
 {
@@ -23,8 +12,11 @@ namespace baseline_system
         public MainWindow()
         {
             InitializeComponent();
-            //ConsoleManager.Show();
-            //Console.WriteLine("Starting app...\n");
+            if (Properties.Settings.Default.connectStrDef == "")
+                Properties.Settings.Default.connectStrDef = Properties.Settings.Default.connectStrCur;
+            if (Properties.Settings.Default.connectStrCur == "")
+                Properties.Settings.Default.connectStrCur = Properties.Settings.Default.connectStrDef;
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -2,5 +2,29 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:baseline_system.Resources.Lang"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
-    
+    <v:String x:Key="rAPTabProject">Tab Project</v:String>
+    <v:String x:Key="rAPTabTask">Tab Task</v:String>
+    <v:String x:Key="rAPTabUser">Tab User</v:String>
+    <v:String x:Key="rAPE_NameProject">Name Project</v:String>
+    <v:String x:Key="rAPE_StateProject">State Project</v:String>
+    <v:String x:Key="rAPE_Author">Author</v:String>
+    <v:String x:Key="rAPE_About">About</v:String>
+    <v:String x:Key="rAPE_Theme">Theme</v:String>
+    <v:String x:Key="rAPE_StateTask">State Task</v:String>
+    <v:String x:Key="rAPE_IDProject">ID Project</v:String>
+    <v:String x:Key="rAPE_IDUsers">ID Users</v:String>
+    <v:String x:Key="rAPE_Name">Name</v:String>
+    <v:String x:Key="rAPE_Login">Login</v:String>
+    <v:String x:Key="rAPE_Password">Password</v:String>
+    <v:String x:Key="rAPE_AdminState">Admin State</v:String>
+    <v:String x:Key="rLoginPageUsername">Username</v:String>
+    <v:String x:Key="rLoginPagePassword">Password</v:String>
+    <v:String x:Key="rLoginPageSignIn">Sign In</v:String>
+    <v:String x:Key="rLoginPageSignInAdmin">Sign In Admin</v:String>
+    <v:String x:Key="rRegistration">Registration</v:String>
+    <v:String x:Key="rLoginPageLogin">Login</v:String>
+    <v:String x:Key="rOldPassword">Old Password</v:String>
+    <v:String x:Key="rnewPassword">New Password</v:String>
+    <v:String x:Key="rConfPassword">Repeat password</v:String>
+
 </ResourceDictionary>

@@ -1,9 +1,7 @@
 ﻿using baseline_system.DialogBox;
 using baseline_system.Pages.Admin;
 using System;
-using System.Configuration;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -17,7 +15,7 @@ namespace baseline_system.Pages
     /// </summary>
     public partial class PageLogin : Page
     {
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static readonly string connectionString = Properties.Settings.Default.connectStrCur;
         public PageLogin()
         {
             InitializeComponent();
@@ -25,29 +23,24 @@ namespace baseline_system.Pages
             Properties.Settings.Default.admStatus = false;
             Properties.Settings.Default.currentUserName = "";
             Properties.Settings.Default.Save();
-
-            Console.WriteLine("Page Login Load --- OK");
         }
 
         private void LoginUser_Click(object sender, RoutedEventArgs e)
         {
             if (Authorization())
                 _ = NavigationService.Navigate(new PageMainFrame());
-            /*MessageBox.Show(Properties.Settings.Default.admStatus.ToString() + " id: " + Properties.Settings.Default.currentUserID.ToString() + " name: " + Properties.Settings.Default.currentUserName.ToString());*/
-            Console.WriteLine(" id: " + Properties.Settings.Default.currentUserID.ToString() + " name: " + Properties.Settings.Default.currentUserName.ToString() + " admStatus: " + Properties.Settings.Default.admStatus.ToString()); 
         }
 
         private void Admin_Click(object sender, RoutedEventArgs e)
         {
-            ConsoleManager.Show();
-            Console.WriteLine("auf1");
+            //NavigationService.Navigate(new PageAdminPanel());
             if (Authorization())
             {
                 if (Properties.Settings.Default.admStatus)
                     NavigationService.Navigate(new PageAdminPanel());
                 else
                 {
-                    ErrorBox errorBox = new ErrorBox("no");
+                    ErrorBox errorBox = new ErrorBox("Not enough rights");
                     if (errorBox.ShowDialog() == true)
                         MessageBox.Show("i");
                 }
@@ -57,6 +50,15 @@ namespace baseline_system.Pages
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
             _ = NavigationService.Navigate(new PageRegistration());
+        }
+
+        private void DefConect_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.connectStrCur = Properties.Settings.Default.connectStrDef;
+            Properties.Settings.Default.Save();
+            defaultDB.Visibility = Visibility.Collapsed;
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
 
         private bool isCorrectLength()
@@ -69,44 +71,55 @@ namespace baseline_system.Pages
         {
             if (isCorrectLength())
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                try
                 {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("sp_Login", connection);
-                    command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.Parameters.Add(new SqlParameter("@Login", userLoginField.Text));
-                    command.Parameters.Add(new SqlParameter("@Password", userPasswordField.Password.ToString()));
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
+                    using (SqlConnection connection = new SqlConnection(connectionString))
                     {
-                        while (reader.Read())
+                        connection.Open();
+                        SqlCommand command = new SqlCommand("sp_Login", connection);
+                        command.CommandType = System.Data.CommandType.StoredProcedure;
+                        command.Parameters.Add(new SqlParameter("@Login", userLoginField.Text));
+                        command.Parameters.Add(new SqlParameter("@Password", userPasswordField.Password.ToString()));
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
                         {
-                            Properties.Settings.Default.currentUserID = reader.GetInt32(0);
-                            Properties.Settings.Default.admStatus = reader.GetBoolean(1);
-                            Properties.Settings.Default.currentUserName = reader.GetString(2);
+                            while (reader.Read())
+                            {
+                                Properties.Settings.Default.currentUserID = reader.GetInt32(0);
+                                Properties.Settings.Default.admStatus = reader.GetBoolean(1);
+                                Properties.Settings.Default.currentUserName = reader.GetString(2);
+                            }
+                            Properties.Settings.Default.Save();
+                            connection.Close();
+                            Console.WriteLine("Reg --- OK");
+                            return true;
                         }
-                        Properties.Settings.Default.Save();
-                        connection.Close();
-                        Console.WriteLine("Reg --- OK");
-                        return true;
+                        else
+                        {
+                            ErrorBox errorBox = new ErrorBox("Auth error");
+                            if (errorBox.ShowDialog() == true)
+                                MessageBox.Show("i");
+                            connection.Close();
+                            Console.WriteLine("Reg --- NO");
+                            return false;
+                        }
                     }
-                    else
-                    {
-                        ErrorBox errorBox = new ErrorBox("Auth error");
-                        if (errorBox.ShowDialog() == true)
-                            MessageBox.Show("i");
-                        connection.Close();
-                        Console.WriteLine("Reg --- NO");
-                        return false;
-                    }
+                }
+                catch (Exception)
+                {
+                    //ErrorBox errorBox = new ErrorBox(ex.ToString());
+                    //if (errorBox.ShowDialog() == true)
+                    //    MessageBox.Show("i");
+                    defaultDB.Visibility = Visibility.Visible;
+                    return false;
+
                 }
             }
             else
             {
-                ErrorBox errorBox = new ErrorBox("No Data");
+                ErrorBox errorBox = new ErrorBox("Incorrect Input");
                 if (errorBox.ShowDialog() == true)
                     MessageBox.Show("i");
-                Console.WriteLine("No data");
                 return false;
             }
         }
@@ -127,7 +140,8 @@ namespace baseline_system.Pages
         {
             if (userPasswordField.SecurePassword.Length > 15)
             {
-                userPasswordField.Password = userPasswordField.Password.Remove(userPasswordField.Password.Length - 1); IsVisibleEror(true);
+                userPasswordField.Password = userPasswordField.Password.Remove(userPasswordField.Password.Length - 1); 
+                IsVisibleEror(true);
                 SetSelection(userPasswordField, userPasswordField.Password.Length);
                 userPasswordField.Focus();
             }

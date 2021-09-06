@@ -43,7 +43,6 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource TC_Main}" />
         <Setter Property="BorderBrush" Value="{StaticResource Border}" />
-
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="True">
                 <Setter Property="Background" Value="{StaticResource AC_Dark}" />
@@ -56,7 +55,6 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource TC_Main}" />
         <Setter Property="BorderBrush" Value="{StaticResource Border}" />
-
         <Style.Triggers>
             <Trigger Property="IsFocused" Value="True">
                 <Setter Property="Background" Value="{StaticResource AC_Dark}" />
@@ -65,6 +63,29 @@
         </Style.Triggers>
     </Style>
 
+    <!--BUTTON SETTING-->
+    <Style x:Key="menuButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource MC_DarkOpacity}"/>
+        <Setter Property="Foreground" Value="{StaticResource AC_Light}"/>
+        <Setter Property="MinHeight" Value="25"/>
+
+        <Setter Property="Margin" Value="0 3"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource AC_Dark}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <Style x:Key="ButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{StaticResource TC_Main}"/>
@@ -82,66 +103,32 @@
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="Foreground" Value="{StaticResource AC_Light}" />
             </Trigger>
-
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="Foreground" Value="Red" />
             </Trigger>
-            <!--<Trigger Property="ForceCursor" Value="True">
-                <Setter Property="Background" Value="Transparent" />
-                <Setter Property="Foreground" Value="{StaticResource AC_Light}" />
-            </Trigger>-->
         </Style.Triggers>
     </Style>
 
+    <!--BORDER SETTING-->
     <Style x:Key="BorderStyle" TargetType="Border">
         <Setter Property="BorderBrush" Value="{StaticResource Border}" />
         <!--<Setter Property="Background" Value="{StaticResource MC_DarkOpacity}"/>-->
         <Setter Property="Background" Value="#3d454f"/>
-     
         <!-- цвет закраски окна-->
     </Style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--/////////////////////////new-->
-
-
-
+    <!--DATAGRID SETTING-->
     <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
-        
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="Red" />
+                <Setter Property="Background" Value="{x:Null}" />
                 <Setter Property="Foreground" Value="{StaticResource TC_Additional}" />
-                
                 <Setter Property="BorderBrush" Value="{x:Null}" />
             </Trigger>
         </Style.Triggers>
     </Style>
-    <!--<Style TargetType="{x:Type DataGridRow}">
-        <Setter Property="Background" Value="{x:Null}" />
-        <Setter Property="BorderBrush" Value="{x:Null}" />
-        <Style.Triggers>
-            <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{x:Null}" />
-                <Setter Property="BorderBrush" Value="{x:Null}" />
-            </Trigger>
-        </Style.Triggers>
-    </Style>-->
-
-
-
+    
     <Style x:Key="DataGridStyle" TargetType="DataGrid">
         <Setter Property="Foreground" Value="{StaticResource TC_Additional}" />
         <!--  цвет всех букв  -->
@@ -162,13 +149,13 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="FontSize" Value="15" />
     </Style>
-    
+
+    <!--TABCONTROL SETTING-->
     <Style x:Key="TabControlStyle" TargetType="TabControl">
         <Setter Property="Background" Value="{StaticResource MC_Dark}" />
         <!-- цвет закраски окна-->
         <Setter Property="BorderThickness" Value="0" />
     </Style>
-
 
     <Style x:Key="TabItemStyle" TargetType="TabItem">
         <Setter Property="Template">
@@ -193,10 +180,7 @@
         </Setter>
     </Style>
 
-
-    <!--//////////////////////new^-->
-
-    <!--combobox-->
+    <!--COMBOBOX SETTING-->
     <SolidColorBrush x:Key="ComboBoxDisabledForegroundBrush" Color="#888" />
     <SolidColorBrush x:Key="ComboBoxDisabledBackgroundBrush" Color="#eee" />
     <SolidColorBrush x:Key="ComboBoxDisabledBorderBrush" Color="#888" />
@@ -325,14 +309,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
-
-
-
-
-
-
 
 
     <!--<Style x:Key="DataGridStyle" TargetType="DataGrid">

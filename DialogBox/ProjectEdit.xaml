@@ -28,19 +28,19 @@
         </Grid.ColumnDefinitions>
 
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="0" Grid.Column="0" Text="ID: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="0" Grid.Column="0" Text="ID "/>
         <TextBlock Style="{StaticResource TextBlockMainStyle}" Grid.Row="0" Grid.Column="1" Text=""  x:Name="IDEdit" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="1" Grid.Column="0" Text="Name Project:"/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="1" Grid.Column="0" Text="{DynamicResource rAPE_NameProject}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="1" Grid.Column="1" x:Name="NameProjectEdit" Text="" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="2" Grid.Column="0" Text="StateProject: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="2" Grid.Column="0" Text="{DynamicResource rAPE_StateProject}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="2" Grid.Column="1" x:Name="StateProjectEdit" Text=""  FontSize="13" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="3" Grid.Column="0" Text="Author: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="3" Grid.Column="0" Text="{DynamicResource rAPE_Author}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="3" Grid.Column="1" x:Name="AuthorEdit" Text="" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="4" Grid.Column="0" Text="About: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="4" Grid.Column="0" Text="{DynamicResource rAPE_About}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="4" Grid.Column="1" x:Name="AboutEdit" Text="" Margin="5 0 0 5"/>
 
         <Grid Grid.ColumnSpan="2" Grid.Row="5" Style="{DynamicResource GridAccentStyle}">

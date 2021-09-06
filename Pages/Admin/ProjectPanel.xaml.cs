@@ -14,7 +14,7 @@ namespace baseline_system.Pages.Admin
     public partial class ProjectPanel : Page
     {
         SqlDataAdapter adapter;
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static readonly string connectionString = Properties.Settings.Default.connectStrCur;
         public ProjectPanel()
         {
             InitializeComponent();

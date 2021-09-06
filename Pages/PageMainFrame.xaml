@@ -19,15 +19,17 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" x:Name="userName" Text="u name ooo" TextWrapping="Wrap" Style="{StaticResource TextBlockMainStyle}" FontSize="25"/>
-            <Button Grid.Row="1" Content="Search" Click="Search_Click"/>
-            <Button Grid.Row="2" Content="Setting" Click="Setting_Click" />
-            <Button Grid.Row="4" Content="admin" Click="Admin_Click" />
+            <Button Style="{DynamicResource menuButton}" Grid.Row="1" Content="Search" Click="Search_Click"/>
+            <Button Style="{DynamicResource menuButton}" Grid.Row="2" Content="Setting" Click="Setting_Click" />
+            <Button Style="{DynamicResource menuButton}" Grid.Row="3" Content="admin" Click="Admin_Click" />
+            <Button Style="{DynamicResource menuButton}" Grid.Row="5" Content="EXIT" Click="Exit_Click" />
         </Grid>
-        
-        <Frame x:Name="MainFrame" Source="Admin/PageAdminPanel.xaml" Grid.Column="1"/>
+
+        <Frame x:Name="MainFrame" Source="PageDefault.xaml" Grid.Column="1"/>
     </Grid>
 </Page>

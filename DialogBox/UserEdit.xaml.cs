@@ -10,7 +10,7 @@ namespace baseline_system.DialogBox
     /// </summary>
     public partial class UserEdit : Window
     {
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private static readonly string connectionString = Properties.Settings.Default.connectStrCur;
         public UserEdit(String ID)
         {
             InitializeComponent();
