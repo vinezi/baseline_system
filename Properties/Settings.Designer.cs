@@ -81,5 +81,29 @@ namespace baseline_system.Properties {
                 this["connectStrCur"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int languageApp {
+            get {
+                return ((int)(this["languageApp"]));
+            }
+            set {
+                this["languageApp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string connectStrNew {
+            get {
+                return ((string)(this["connectStrNew"]));
+            }
+            set {
+                this["connectStrNew"] = value;
+            }
+        }
     }
 }

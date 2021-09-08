@@ -17,10 +17,15 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"  Grid.Column="1" Grid.Row="1" Margin="5 0">
-            <TextBlock Text="uncnown error" x:Name="testTB" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"  Grid.Column="1" Grid.Row="0" Margin="5 0 5 20">
+            <Grid>
+            <TextBlock Text="uncnown error" x:Name="textError" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0"/>
+            <TextBlock Foreground="Red" Text="uncnown error" x:Name="textWarnning" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0" Visibility="Collapsed"/>
+            </Grid>
         </ScrollViewer>
-        <Button Content="ok" VerticalAlignment="Bottom" IsCancel="True" Grid.Row="2"/>
+        <Button x:Name="acceptBtn" Style="{DynamicResource menuButton}" Content="accept" Grid.Row="2" IsDefault="True" Click="Accept_Click" Visibility="Collapsed"/>
+        <Button x:Name="okBtn" Style="{DynamicResource menuButton}" Content="ok" IsCancel="True" Grid.Row="3"/>
     </Grid>
 </Window>

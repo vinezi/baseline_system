@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace baseline_system.DialogBox
 {
@@ -19,10 +7,31 @@ namespace baseline_system.DialogBox
     /// </summary>
     public partial class ErrorBox : Window
     {
-        public ErrorBox(string test)
+        public ErrorBox(string text)
         {
             InitializeComponent();
-            testTB.Text = test;
+            textError.Text = text;
+        }
+
+        public ErrorBox(string text, bool colorRed, bool acceptFlag)
+        { 
+            InitializeComponent();
+            okBtn.Content = "cancel";
+            if (colorRed)
+            {
+                textError.Visibility = Visibility.Collapsed;
+                textWarnning.Visibility = Visibility.Visible;
+                textWarnning.Text = text;
+            }
+            if (acceptFlag)
+            {
+                acceptBtn.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Accept_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
         }
     }
 }

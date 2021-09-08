@@ -74,6 +74,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DialogBox\ConectConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DialogBox\ErrorBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +103,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ConsoleManager.cs" />
+    <Compile Include="DialogBox\ConectConfiguration.xaml.cs">
+      <DependentUpon>ConectConfiguration.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DialogBox\ErrorBox.xaml.cs">
       <DependentUpon>ErrorBox.xaml</DependentUpon>
     </Compile>

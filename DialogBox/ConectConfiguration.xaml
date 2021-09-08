@@ -1,0 +1,68 @@
+﻿<Window x:Class="baseline_system.DialogBox.ConectConfiguration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:baseline_system.DialogBox"
+        mc:Ignorable="d"
+        Title="ConectConfiguration"
+        
+        FontSize="13"
+        Style="{DynamicResource WindowStyle}"
+        SizeToContent="WidthAndHeight"
+        MinHeight="130" MinWidth="250"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--"Data Source=.\SQLEXPRESS;Initial Catalog=Project Manager;Integrated Security=True"-->
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="0" Margin="5 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    
+                    
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Data Source=.\SQLEXPRESS;Initial Catalog=Project Manager;Integrated Security=True" Grid.ColumnSpan="2" x:Name="CurrentConecttiotStr" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0" Grid.Column="0"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Sourse" x:Name="Source" Style="{DynamicResource TextBlockMainStyle}"/>
+                <TextBox x:Name="SourseField" Grid.Row="1" Grid.Column="1" Style="{DynamicResource TextBoxStyle}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Catalog" x:Name="Catalog" Style="{DynamicResource TextBlockMainStyle}"/>
+                <TextBox x:Name="CatalogField" Grid.Row="2" Grid.Column="1" Style="{DynamicResource TextBoxStyle}"/>
+                
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Security" x:Name="Security" Style="{DynamicResource TextBlockMainStyle}"/>
+                <ComboBox SelectedItem="0"  x:Name="SecurityField"  Grid.Row="3" Grid.Column="1">
+                    <ComboBoxItem Tag="False" Content="False"/>
+                    <ComboBoxItem Tag="True" Content="True"/>
+                </ComboBox>
+
+                <CheckBox Grid.Row="4" Grid.Column="0" x:Name="MyStrCheckBox" IsThreeState="False" IsChecked="False" Height="20" Content="enter me string"  Foreground="White"/>
+                <TextBox x:Name="MyStrField" Grid.Row="4" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" IsEnabled="False"/>
+
+                <CheckBox Grid.Row="5" Grid.Column="0" x:Name="skipCheckBox" IsThreeState="False" IsChecked="False" Height="20" Content="spik login wondows" Foreground="White"/>
+
+            </Grid>
+        </ScrollViewer>
+        <Grid  Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Style="{DynamicResource menuButton}" Content="accept" Click="Accept_Click" IsDefault="True"/>
+            <Button Grid.Column="1" Style="{DynamicResource menuButton}" Content="Cancel" IsCancel="True"/>
+        </Grid>
+    </Grid>
+</Window>

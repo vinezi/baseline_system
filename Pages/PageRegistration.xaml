@@ -41,20 +41,20 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Margin="5" Padding="5" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="Hallo" />
 
-                    <TextBlock Grid.Row="1" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPageLogin}" />
+                    <TextBlock Grid.Row="1" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rLoginPageLogin}" />
                     <TextBox x:Name="userLoginField" Grid.Row="2" MinWidth="230" Margin="10,0,10,0" FontSize="19" Style="{DynamicResource TextBoxStyle}" Text="" TextChanged="TVLogin_TextChanged"/>
 
-                    <TextBlock Grid.Row="3" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPageUsername}" />
+                    <TextBlock Grid.Row="3" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rLoginPageUsername}" />
                     <TextBox x:Name="userNameField" Grid.Row="4" MinWidth="230" Margin="10,0,10,0" FontSize="19" Style="{DynamicResource TextBoxStyle}" Text="" TextChanged="TVName_TextChanged"/>
 
-                    <TextBlock Grid.Row="5" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPagePassword}" />
+                    <TextBlock Grid.Row="5" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rLoginPagePassword}" />
                     <PasswordBox x:Name="userPasswordField" Grid.Row="6" Margin="10,0,10,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" PasswordChanged ="Password_PasswordChanged" />
 
-                    <TextBlock Grid.Row="7" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rLoginPagePassword}" />
+                    <TextBlock Grid.Row="7" Margin="10,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rConfPassword}" />
                     <PasswordBox x:Name="userConfirmField" Grid.Row="8" Margin="10,0,10,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" PasswordChanged ="Confirm_PasswordChanged"/>
 
-                    <Button Grid.Row="9" Margin="0,0,0,0" Content="org rRegistration}" Style="{DynamicResource ButtonStyle}" Click="Register_Click" />
-                    <Button Grid.Row="10" Margin="10,0,0,0" Content="user rLoginPageSignIn}"  Style="{DynamicResource ButtonStyle}" Height="16" VerticalAlignment="Bottom" Click="Back_Click" />
+                    <Button Grid.Row="9" Margin="0,0,0,0" Content="{DynamicResource rRegistration}" Style="{DynamicResource ButtonStyle}" Click="Register_Click" />
+                    <Button Grid.Row="10" Margin="10,0,0,0" Content="{DynamicResource rLoginPageSignIn}"  Style="{DynamicResource ButtonStyle}" Height="16" VerticalAlignment="Bottom" Click="Back_Click" />
 
                     <TextBlock Grid.Row="11" x:Name="errorMsg" Opacity=".8"  Visibility="Collapsed" Text="incorrect input" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Center" Margin="0" />
                 </Grid>

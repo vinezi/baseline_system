@@ -16,17 +16,21 @@
     <v:String x:Key="rAPE_StateTask">Состояние задачи</v:String>
     <v:String x:Key="rAPE_IDProject">ID проекта</v:String>
     <v:String x:Key="rAPE_IDUsers">ID пользователя</v:String>
+    
     <v:String x:Key="rAPE_Name">Имя</v:String>
     <v:String x:Key="rAPE_Login">Логин</v:String>
     <v:String x:Key="rAPE_Password">Пароль</v:String>
     <v:String x:Key="rAPE_AdminState">Статус администратора</v:String>
+    
     <v:String x:Key="rLoginPageUsername">Имя</v:String>
     <v:String x:Key="rLoginPagePassword">Пароль</v:String>
     <v:String x:Key="rLoginPageSignIn">Войти</v:String>
     <v:String x:Key="rLoginPageSignInAdmin">Войти как администратор</v:String>
     <v:String x:Key="rRegistration">Зарегистрироваться</v:String>
+    
+    
     <v:String x:Key="rLoginPageLogin">Логин</v:String>
-    <v:String x:Key="rOldPassword">Старый пароль</v:String>
+        <v:String x:Key="rOldPassword">Старый пароль</v:String>
     <v:String x:Key="rnewPassword">Новый пароль</v:String>
     <v:String x:Key="rConfPassword">Повторите пароль</v:String>
 </ResourceDictionary>

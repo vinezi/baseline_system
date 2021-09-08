@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using baseline_system.DialogBox;
+using System;
+using System.Data.SqlClient;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace baseline_system.Pages
@@ -8,15 +11,67 @@ namespace baseline_system.Pages
     /// </summary>
     public partial class PageSetting : Page
     {
+
+        private static readonly string connectionString = Properties.Settings.Default.connectStrCur;
         public PageSetting()
         {
             InitializeComponent();
+            langCombo.SelectedIndex = Properties.Settings.Default.languageApp;
+            conectionStr.Text = Properties.Settings.Default.connectStrCur;
         }
 
         private void NewData_Click(object sender, RoutedEventArgs e)
         {
-            //System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
-            //Application.Current.Shutdown();
+            if (Properties.Settings.Default.currentUserID <= -1 || userLoginField.Text.Length == 0 || userNameField.Text.Length == 0 || newPasswordField.Password.ToString() != comfirmPasswordField.Password.ToString())
+            {
+                ErrorBox errorBox = new ErrorBox("Incorrect Data");
+                if (errorBox.ShowDialog() == true)
+                    MessageBox.Show("i");
+            }
+            else
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("sp_UpdateUsers", connection);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@ID", Properties.Settings.Default.currentUserID));
+                    command.Parameters.Add(new SqlParameter("@Name", userNameField.Text));
+                    command.Parameters.Add(new SqlParameter("@Login", userLoginField.Text));
+                    command.Parameters.Add(new SqlParameter("@Password", newPasswordField.Password.ToString()));
+                    command.Parameters.Add(new SqlParameter("@Admin_state", Properties.Settings.Default.admStatus));
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
+            }
+
+        }
+
+        private void LanguageChange(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            string lang = (cb.SelectedItem as ComboBoxItem).Tag.ToString();
+            var uri = new Uri("Resources/Lang/" + lang + ".xaml", UriKind.Relative);
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
+            Properties.Settings.Default.languageApp = cb.SelectedIndex;
+            Properties.Settings.Default.Save();
+        }
+
+        private void TextBox_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ErrorBox errorBox = new ErrorBox("Warning\nThe application may be broken!\nChange this setting only if you are confident in your actions", true, true);
+            if (errorBox.ShowDialog() == true)
+            {
+                ConectConfiguration conectConfiguration = new ConectConfiguration();
+                if (conectConfiguration.ShowDialog() == true)
+                {
+                    conectionStr.Text = Properties.Settings.Default.connectStrNew;
+                }
+            }
         }
     }
 }
