@@ -311,6 +311,15 @@
     </Style>
 
 
+
+    <Style x:Key="RadioButtonStyle" TargetType="RadioButton">
+        <Setter Property="Foreground" Value="{StaticResource TC_Main}" />
+    </Style>
+
+    <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="Foreground" Value="{StaticResource TC_Main}" />
+    </Style>
+
     <!--<Style x:Key="DataGridStyle" TargetType="DataGrid">
         <Setter Property="Foreground" Value="White" />
         --><!--  цвет всех букв  --><!--

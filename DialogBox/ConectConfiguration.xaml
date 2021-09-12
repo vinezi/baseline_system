@@ -20,39 +20,48 @@
         <!--"Data Source=.\SQLEXPRESS;Initial Catalog=Project Manager;Integrated Security=True"-->
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="0" Margin="5 0">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    
-                    
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="Data Source=.\SQLEXPRESS;Initial Catalog=Project Manager;Integrated Security=True" Grid.ColumnSpan="2" x:Name="CurrentConecttiotStr" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0" Grid.Column="0"/>
+                <TextBlock Text="" Grid.ColumnSpan="2" x:Name="CurrentConecttiotStr" Style="{DynamicResource TextBlockMainStyle}" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Sourse" x:Name="Source" Style="{DynamicResource TextBlockMainStyle}"/>
-                <TextBox x:Name="SourseField" Grid.Row="1" Grid.Column="1" Style="{DynamicResource TextBoxStyle}"/>
-
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Catalog" x:Name="Catalog" Style="{DynamicResource TextBlockMainStyle}"/>
-                <TextBox x:Name="CatalogField" Grid.Row="2" Grid.Column="1" Style="{DynamicResource TextBoxStyle}"/>
                 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Security" x:Name="Security" Style="{DynamicResource TextBlockMainStyle}"/>
-                <ComboBox SelectedItem="0"  x:Name="SecurityField"  Grid.Row="3" Grid.Column="1">
-                    <ComboBoxItem Tag="False" Content="False"/>
-                    <ComboBoxItem Tag="True" Content="True"/>
-                </ComboBox>
+                <StackPanel Grid.Row="1">
+                    <RadioButton Style="{DynamicResource RadioButtonStyle}" Checked="MaskRB_Checked" GroupName="Type" Content="maska"  />
+                    <RadioButton Style="{DynamicResource RadioButtonStyle}" Checked="MyStrRB_Checked" GroupName="Type" Content="my" />
+                </StackPanel>
 
-                <CheckBox Grid.Row="4" Grid.Column="0" x:Name="MyStrCheckBox" IsThreeState="False" IsChecked="False" Height="20" Content="enter me string"  Foreground="White"/>
-                <TextBox x:Name="MyStrField" Grid.Row="4" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" IsEnabled="False"/>
+                <Grid Grid.Row="2" x:Name="mask" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Sourse" x:Name="Source" Style="{DynamicResource TextBlockMainStyle}"/>
+                    <TextBox x:Name="SourseField" Grid.Row="0" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" TextChanged="Field_TextChanged"/>
 
-                <CheckBox Grid.Row="5" Grid.Column="0" x:Name="skipCheckBox" IsThreeState="False" IsChecked="False" Height="20" Content="spik login wondows" Foreground="White"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Catalog" x:Name="Catalog" Style="{DynamicResource TextBlockMainStyle}"/>
+                    <TextBox x:Name="CatalogField" Grid.Row="1" Grid.Column="1" Style="{DynamicResource TextBoxStyle}" TextChanged="Field_TextChanged"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Security" x:Name="Security" Style="{DynamicResource TextBlockMainStyle}"/>
+                    <ComboBox SelectedItem="0" SelectionChanged="SecurityField_SelectionChanged"  x:Name="SecurityField"  Grid.Row="2" Grid.Column="1">
+                        <ComboBoxItem Tag="False" Content="False"/>
+                        <ComboBoxItem Tag="True" Content="True"/>
+                    </ComboBox>
+                </Grid>
+                
+                <TextBox x:Name="MyStrField" Grid.Row="2" Style="{DynamicResource TextBoxStyle}" Visibility="Collapsed" TextChanged="MyStrField_TextChanged"/>
+
+                <CheckBox Style="{DynamicResource CheckBoxStyle}" Grid.Row="5" Grid.Column="0" x:Name="skipCheckBox" IsThreeState="True" IsChecked="False" Height="20" Content="spik login wondows"/>
 
             </Grid>
         </ScrollViewer>

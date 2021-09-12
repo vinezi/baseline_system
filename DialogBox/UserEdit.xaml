@@ -28,20 +28,19 @@
         </Grid.ColumnDefinitions>
 
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="0" Grid.Column="0" Text="ID: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="0" Grid.Column="0" Text="ID"/>
         <TextBlock Style="{StaticResource TextBlockMainStyle}" Grid.Row="0" Grid.Column="1" Text=""  x:Name="IDEdit" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="1" Grid.Column="0" Text="Name:"/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="1" Grid.Column="0" Text="{DynamicResource rAPE_Name}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="1" Grid.Column="1" x:Name="NameEdit" Text="" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="2" Grid.Column="0" Text="Login: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="2" Grid.Column="0" Text="{DynamicResource rAPE_Login}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="2" Grid.Column="1" x:Name="LoginEdit" Text=""  FontSize="13" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="3" Grid.Column="0" Text="Password: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="3" Grid.Column="0" Text="{DynamicResource rAPE_Password}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="3" Grid.Column="1" x:Name="PasswordEdit" Text="" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="4" Grid.Column="0" Text="Admis state: "/>
-        <!--<TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="4" Grid.Column="1" x:Name="AdminStateEdit" Text="" Margin="5 0 0 5"/>-->
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="4" Grid.Column="0" Text="{DynamicResource rAPE_AdminState}"/>
 
         <ComboBox SelectedItem="0"  x:Name="AdminStateEdit"  Grid.Row="4" Grid.Column="1" Margin="5 0 0 5" >
             <ComboBoxItem Tag="False" Content="False"/>
@@ -58,11 +57,11 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Button Style="{StaticResource ButtonStyle}" Grid.Column="0" IsDefault="True" Click="Add_Click" Margin="0,0,10,0">Add</Button>
-            <Button x:Name="deleteBtn" Style="{StaticResource ButtonStyle}" Grid.Column="1" IsDefault="True" Click="Delete_Click" Margin="0,0,10,0">Delete</Button>
-            <Button x:Name="changeBtn" Style="{StaticResource ButtonStyle}" Grid.Column="2" IsDefault="True" Click="Change_Click" Margin="0,0,10,0">Change</Button>
+            <Button Style="{StaticResource ButtonStyle}" Grid.Column="0" IsDefault="True" Click="Add_Click" Margin="0,0,10,0" Content="{DynamicResource rAdd}"></Button>
+            <Button x:Name="deleteBtn" Style="{StaticResource ButtonStyle}" Grid.Column="1" IsDefault="True" Click="Delete_Click" Margin="0,0,10,0" Content="{DynamicResource rDelete}"></Button>
+            <Button x:Name="changeBtn" Style="{StaticResource ButtonStyle}" Grid.Column="2" IsDefault="True" Click="Change_Click" Margin="0,0,10,0" Content="{DynamicResource rChange}"></Button>
 
-            <Button Style="{StaticResource ButtonStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" IsCancel="True">Cancel</Button>
+            <Button Style="{StaticResource ButtonStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" IsCancel="True" Content="{DynamicResource rCancel}"></Button>
         </Grid>
     </Grid>
 </Window>

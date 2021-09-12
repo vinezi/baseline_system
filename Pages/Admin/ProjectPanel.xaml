@@ -49,32 +49,5 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-
-        <!--<Grid Grid.Column="1" Margin="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
-
-            <TextBlock Style="{StaticResource TextBlockMainStyle}" Grid.Row="0" Text="ID: "/>
-            <TextBlock Style="{StaticResource TextBlockMainStyle}" x:Name="IdMW" Grid.Row="1" Text=""/>
-            <TextBlock Style="{StaticResource TextBlockMainStyle}" Grid.Row="2" Text="{DynamicResource rAPEditionDate}"/>
-            <DatePicker x:Name="DateMW" Grid.Row="3"/>
-
-            <TextBlock  Style="{StaticResource TextBlockMainStyle}" Grid.Row="4" Text="{DynamicResource rAPEditionPublisher}"/>
-            <TextBox Style="{StaticResource TextBoxStyle}" x:Name="PublisherMW" Grid.Row="5" Text=""/>
-
-            <Button Style="{DynamicResource ButtonStyle}" Content="DynamicResource rAdminPanelBtnAdd}" Grid.Row="6" Click="AddNew_Click" Margin="0 8"/>
-            <Button Style="{DynamicResource ButtonStyle}" Content="DynamicResource rAdminPanelBtnDelete}" Grid.Row="8" Click="Delete_Click" />
-            <Button Style="{DynamicResource ButtonStyle}" Content="DynamicResource rAdminPanelBtnUpdate}" Grid.Row="9" Click="Update_Click" Margin="0 5"/>
-        </Grid>-->
     </Grid>
 </Page>

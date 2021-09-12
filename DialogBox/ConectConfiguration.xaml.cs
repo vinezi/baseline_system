@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace baseline_system.DialogBox
 {
@@ -22,11 +10,57 @@ namespace baseline_system.DialogBox
         public ConectConfiguration()
         {
             InitializeComponent();
+            SecurityField.SelectedIndex = 1;
+            CurrentConecttiotStr.Text = "";
         }
 
         private void Accept_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            if (CurrentConecttiotStr.Text.Length > 13)
+            {
+                Properties.Settings.Default.connectStrNew = CurrentConecttiotStr.Text;
+                Properties.Settings.Default.connectStrCur = Properties.Settings.Default.connectStrNew;
+                Properties.Settings.Default.skip = skipCheckBox.IsChecked.Value;
+                Properties.Settings.Default.Save();
+                this.DialogResult = true;
+            }
+            else
+            {
+                ErrorBox errorBox = new ErrorBox("Incorrect Data");
+                if (errorBox.ShowDialog() == true)
+                    MessageBox.Show("i");
+            }
+        }
+
+        private void MaskRB_Checked(object sender, RoutedEventArgs e)
+        {
+            if(MyStrField.IsVisible)
+                MyStrField.Visibility = Visibility.Collapsed;
+            if(!mask.IsVisible)
+                mask.Visibility = Visibility.Visible;
+        }
+
+        private void MyStrRB_Checked(object sender, RoutedEventArgs e)
+        {
+            if (mask.IsVisible)
+                mask.Visibility = Visibility.Collapsed;
+            if (!MyStrField.IsVisible)
+                MyStrField.Visibility = Visibility.Visible;
+        }
+
+        private void Field_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CurrentConecttiotStr.Text = "Data Source=" + SourseField.Text + "; Initial Catalog =" + CatalogField.Text + ";Integrated Security=" + SecurityField.Text + "\"";
+        }
+
+        private void SecurityField_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            CurrentConecttiotStr.Text = "Data Source=" + SourseField.Text + "; Initial Catalog =" + CatalogField.Text + ";Integrated Security=" + SecurityField.Text + "\"";
+        }
+
+        private void MyStrField_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            CurrentConecttiotStr.Text = MyStrField.Text;
         }
     }
 }

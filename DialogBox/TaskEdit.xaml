@@ -13,7 +13,7 @@
         MinHeight="240"
         MinWidth="250"
         WindowStartupLocation="CenterScreen">
-    <Grid Margin="10" >
+    <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -29,24 +29,22 @@
         </Grid.ColumnDefinitions>
 
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="0" Grid.Column="0" Text="ID: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="0" Grid.Column="0" Text="ID"/>
         <TextBlock Style="{StaticResource TextBlockMainStyle}" Grid.Row="0" Grid.Column="1" Text=""  x:Name="IDEdit" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="1" Grid.Column="0" Text="Theme:"/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="1" Grid.Column="0" Text="{DynamicResource rAPE_Theme}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="1" Grid.Column="1" x:Name="ThemeEdit" Text="" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="2" Grid.Column="0" Text="State Task: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="2" Grid.Column="0" Text="{DynamicResource rAPE_StateTask}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="2" Grid.Column="1" x:Name="StateTaskEdit" Text=""  FontSize="13" Margin="5 0 0 5"/>
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="3" Grid.Column="0" Text="ID Project: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="3" Grid.Column="0" Text="{DynamicResource rAPE_IDProject}"/>
         <ComboBox  Grid.Row="3" Grid.Column="1" x:Name="IDProjectEdit" Height="22" VerticalAlignment="Center" Margin="5 0 0 5"/>
-        <!--<TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="3" Grid.Column="1" x:Name="IDProjectEdit" Text="" Margin="5 0 0 5"/>-->
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="4" Grid.Column="0" Text="ID User: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="4" Grid.Column="0" Text="{DynamicResource rAPE_IDUsers}"/>
         <ComboBox Grid.Row="4" Grid.Column="1" x:Name="IDUserEdit" Height="22" VerticalAlignment="Center" Margin="5 0 0 5"/>
-        <!--<TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="4" Grid.Column="1" x:Name="IDUserEdit" Text="" Margin="5 0 0 5"/>-->
 
-        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="5" Grid.Column="0" Text="About: "/>
+        <TextBlock Style="{StaticResource TextBlockAdditionalStyle}" Grid.Row="5" Grid.Column="0" Text="{DynamicResource rAPE_About}"/>
         <TextBox Style="{StaticResource TextBoxStyle}" Grid.Row="5" Grid.Column="1" x:Name="AboutEdit" Text="" Margin="5 0 0 5"/>
 
         <Grid Grid.ColumnSpan="2" Grid.Row="6" Style="{DynamicResource GridAccentStyle}">
@@ -59,11 +57,11 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Button Style="{StaticResource ButtonStyle}" Grid.Column="0" IsDefault="True" Click="Add_Click" Margin="0,0,10,0">Add</Button>
-            <Button x:Name="deleteBtn" Style="{StaticResource ButtonStyle}" Grid.Column="1" IsDefault="True" Click="Delete_Click" Margin="0,0,10,0">Delete</Button>
-            <Button x:Name="changeBtn" Style="{StaticResource ButtonStyle}" Grid.Column="2" IsDefault="True" Click="Change_Click" Margin="0,0,10,0">Change</Button>
+            <Button Style="{StaticResource ButtonStyle}" Grid.Column="0" IsDefault="True" Click="Add_Click" Margin="0,0,10,0" Content="{DynamicResource rAdd}"></Button>
+            <Button x:Name="deleteBtn" Style="{StaticResource ButtonStyle}" Grid.Column="1" IsDefault="True" Click="Delete_Click" Margin="0,0,10,0" Content="{DynamicResource rDelete}"></Button>
+            <Button x:Name="changeBtn" Style="{StaticResource ButtonStyle}" Grid.Column="2" IsDefault="True" Click="Change_Click" Margin="0,0,10,0" Content="{DynamicResource rChange}"></Button>
 
-            <Button Style="{StaticResource ButtonStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" IsCancel="True">Cancel</Button>
+            <Button Style="{StaticResource ButtonStyle}" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" IsCancel="True" Content="{DynamicResource rCancel}"></Button>
         </Grid>
     </Grid>
 </Window>

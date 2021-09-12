@@ -24,9 +24,6 @@
             <TabItem Header="{DynamicResource rAPTabUser}" Style="{DynamicResource TabItemStyle}">
                 <Frame Source="UserPanel.xaml"/>
             </TabItem>
-            <!--<TabItem Header="DynamicResource rAdminPanelTabEdition}" Style="{DynamicResource TabItemStyle}">
-                <Frame Source="AdminEditionControl.xaml"/>
-            </TabItem>-->
         </TabControl>
     </Grid>
 </Page>

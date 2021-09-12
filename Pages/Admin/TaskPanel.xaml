@@ -20,31 +20,31 @@
 
                 <DataGridTextColumn Binding="{Binding Path= Theme}" HeaderStyle="{DynamicResource DataGridHeaderStyle}"  Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
-                        <TextBlock Text="DynamicResource rAPE_Theme}" HorizontalAlignment="Stretch" />
+                        <TextBlock Text="{DynamicResource rAPE_Theme}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
                 <DataGridTextColumn Binding="{Binding Path= State_task}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
-                        <TextBlock Text="DynamicResource rAPE_StateTask}" HorizontalAlignment="Stretch" />
+                        <TextBlock Text="{DynamicResource rAPE_StateTask}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
                 <DataGridTextColumn Binding="{Binding Path= ID_project}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
-                        <TextBlock Text="DynamicResource rAPE_IDProject}" HorizontalAlignment="Stretch" />
+                        <TextBlock Text="{DynamicResource rAPE_IDProject}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
                 <DataGridTextColumn Binding="{Binding Path= ID_users}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
-                        <TextBlock Text="DynamicResource rAPE_IDUsers}" HorizontalAlignment="Stretch" />
+                        <TextBlock Text="{DynamicResource rAPE_IDUsers}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
                 <DataGridTextColumn Binding="{Binding Path= About}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
-                        <TextBlock Text="DynamicResource rAPE_About}" HorizontalAlignment="Stretch" />
+                        <TextBlock Text="{DynamicResource rAPE_About}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
             </DataGrid.Columns>

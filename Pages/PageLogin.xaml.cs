@@ -105,7 +105,7 @@ namespace baseline_system.Pages
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     //ErrorBox errorBox = new ErrorBox(ex.ToString());
                     //if (errorBox.ShowDialog() == true)

@@ -23,7 +23,7 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Border Margin="5" Padding="5" BorderThickness="1" CornerRadius="5" Style="{DynamicResource BorderStyle}">
                 <Grid Margin="0">
-                    
+
                     <Grid.RowDefinitions>
                         <RowDefinition />
                         <RowDefinition />
@@ -34,7 +34,7 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Margin="10" Padding="10" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="Hallo" />
+                    <TextBlock Grid.Row="0" Margin="10" Padding="10" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="{DynamicResource rHallo}" />
 
                     <TextBlock Grid.Row="1" Margin="10,0,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rLoginPageUsername}" />
                     <TextBox x:Name="userLoginField" Grid.Row="2" MinWidth="230" Margin="10,0,10,0" FontSize="19" Style="{DynamicResource TextBoxStyle}" Text="" TextChanged="userLoginField_TextChanged" />

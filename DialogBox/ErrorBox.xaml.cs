@@ -14,9 +14,8 @@ namespace baseline_system.DialogBox
         }
 
         public ErrorBox(string text, bool colorRed, bool acceptFlag)
-        { 
+        {
             InitializeComponent();
-            okBtn.Content = "cancel";
             if (colorRed)
             {
                 textError.Visibility = Visibility.Collapsed;
@@ -27,6 +26,7 @@ namespace baseline_system.DialogBox
             {
                 acceptBtn.Visibility = Visibility.Visible;
             }
+            this.Title = "Warning";
         }
 
         private void Accept_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using baseline_system.Pages.Admin;
+using System;
+using System.Configuration;
 using System.Windows;
 
 namespace baseline_system
@@ -12,12 +14,16 @@ namespace baseline_system
         {
             InitializeComponent();
             if (Properties.Settings.Default.connectStrDef == "")
-                Properties.Settings.Default.connectStrDef = Properties.Settings.Default.connectStrCur;
+                Properties.Settings.Default.connectStrDef = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             if (Properties.Settings.Default.connectStrCur == "")
                 Properties.Settings.Default.connectStrCur = Properties.Settings.Default.connectStrDef;
             Properties.Settings.Default.Save();
 
             LangSetting();
+            if (Properties.Settings.Default.skip)
+            {
+                MainFrame.Content = new NoAuthPage();
+            }
         }
         private void LangSetting()
         {

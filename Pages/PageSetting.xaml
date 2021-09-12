@@ -23,7 +23,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Margin="10" Padding="10" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="Setting" />
+                <TextBlock Grid.Row="0" Margin="10" Padding="10" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="{DynamicResource rPageMainSetting}" />
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -33,22 +33,22 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
-                        <!--<RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>-->
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="acc Setting" />
-                    
-                    <TextBlock Grid.Row="1" Margin="0,0,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="Login" />
+                    <TextBlock Grid.Row="0" HorizontalAlignment="Center" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="{DynamicResource rPageSetAccSetting}" />
+
+                    <TextBlock Grid.Row="1" Margin="0,0,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rAPE_Login}" />
                     <TextBox x:Name="userLoginField" Grid.Row="2" MinWidth="230" Text="111" FontSize="19" Style="{DynamicResource TextBoxStyle}" IsReadOnly="True" />
 
-                    <TextBlock Grid.Row="3" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="name" />
+                    <TextBlock Grid.Row="3" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rAPE_Name}" />
                     <TextBox x:Name="userNameField" Grid.Row="4" MinWidth="230" FontSize="19" Style="{DynamicResource TextBoxStyle}" />
 
-                    <!--<TextBlock Grid.Row="5" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rOldPassword}" />
-                    <PasswordBox x:Name="userPasswordField" Grid.Row="6" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />-->
+                    <TextBlock Grid.Row="5" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rOldPassword}" />
+                    <PasswordBox x:Name="userPasswordField" Grid.Row="6" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
 
-                    <Grid Grid.Row="5" >
+                    <Grid Grid.Row="7" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
@@ -59,19 +59,19 @@
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rnewPassword}" />
+                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,5,0,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rnewPassword}" />
                         <PasswordBox x:Name="newPasswordField" Grid.Row="1" Grid.Column="0" Margin="0,0,5,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
 
-                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="5,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="DynamicResource rConfPassword}" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="5,5,10,2" FontSize="13" Style="{DynamicResource TextBlockAdditionalStyle}" Text="{DynamicResource rConfPassword}" />
                         <PasswordBox x:Name="comfirmPasswordField" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" FontSize="19"  PasswordChar="☭" Style="{DynamicResource PasswordBoxStyle}" ToolTip="Password" />
 
-                        <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10, 0,15" Content="no rRegistration}" Style="{DynamicResource menuButton}" Click="NewData_Click"  />
+                        <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10, 0,15" Content="{DynamicResource rSettingChange}" Style="{DynamicResource menuButton}" Click="NewData_Click"  />
                     </Grid>
                 </Grid>
 
 
 
-                <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="connection Setting" />
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="{DynamicResource rPageSetConSetting}" />
                 <Grid Grid.Row="3">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -82,13 +82,13 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
                     <TextBox IsReadOnly="True" Grid.Row="1" Grid.Column="0" x:Name="conectionStr" FontSize="13" Margin="0 10 5 0 " Style="{DynamicResource TextBoxStyle}"  PreviewMouseDown="TextBox_MouseDown"/>
-                    <Button Grid.Row="1" Grid.Column="1" Margin="5,10,0,0" Content="apply}" Style="{DynamicResource menuButton}" Click="NewData_Click" />
+                    <Button Grid.Row="1" Grid.Column="1" Margin="5,10,0,0" Content="{DynamicResource rSettingChange}" Style="{DynamicResource menuButton}" Click="NewConStr_Click" />
                 </Grid>
 
-                <TextBlock Grid.Row="4" HorizontalAlignment="Center" Margin="0 10 0 10" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="language Setting" />
+                <TextBlock Grid.Row="4" HorizontalAlignment="Center" Margin="0 10 0 10" FontSize="18" Style="{DynamicResource TextBlockMainStyle}" Text="{DynamicResource rPageSetLanSetting}" />
                 <ComboBox SelectedItem="0" SelectionChanged="LanguageChange" x:Name="langCombo"  Grid.Row="5" Margin="0 0 0 250">
-                    <ComboBoxItem Name="RU" Tag="RU" Content="DynamicResource rSettingLanguageRU}"/>
-                    <ComboBoxItem Name="EN" Tag="EN" Content="DynamicResource rSettingLanguageEN}"/>
+                    <ComboBoxItem Name="RU" Tag="RU" Content="{DynamicResource rSettingLanguageRU}"/>
+                    <ComboBoxItem Name="EN" Tag="EN" Content="{DynamicResource rSettingLanguageEN}"/>
                 </ComboBox>
             </Grid>
         </ScrollViewer>
