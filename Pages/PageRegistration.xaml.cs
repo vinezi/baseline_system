@@ -1,6 +1,5 @@
 ﻿using baseline_system.DialogBox;
 using System;
-using System.Configuration;
 using System.Data.SqlClient;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -16,13 +15,9 @@ namespace baseline_system.Pages
     public partial class PageRegistration : Page
     {
         private static readonly string connectionString = Properties.Settings.Default.connectStrCur;
-
-        //public object InputLanguage { get; }
-
         public PageRegistration()
         {
             InitializeComponent();
-            //lang.Text = InputLanguage.CurrentInputLanguage;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

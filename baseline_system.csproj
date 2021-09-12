@@ -184,6 +184,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ResultModel.cs" />
     <Compile Include="Pages\Admin\NoAuthPage.xaml.cs">
       <DependentUpon>NoAuthPage.xaml</DependentUpon>
     </Compile>

@@ -25,7 +25,7 @@
     <v:String x:Key="rLoginPageUsername">Имя</v:String>
     <v:String x:Key="rLoginPagePassword">Пароль</v:String>
     <v:String x:Key="rLoginPageSignIn">Войти</v:String>
-    <v:String x:Key="rLoginPageSignInAdmin">Войти как администратор</v:String>
+    <v:String x:Key="rLoginPageSignInAdmin">Я администратор</v:String>
     <v:String x:Key="rRegistration">Зарегистрироваться</v:String>
 
     <v:String x:Key="rLoginPageLogin">Логин</v:String>
@@ -51,17 +51,24 @@
 
     <v:String x:Key="rPageMainSearch">Поиск</v:String>
     <v:String x:Key="rPageMainSetting">Настройки</v:String>
-    <v:String x:Key="rPageMainAdmin">Для администратора</v:String>
+    <v:String x:Key="rPageMainAdmin">Администрирование</v:String>
     <v:String x:Key="rPageMainExit">Выход</v:String>
 
     <v:String x:Key="rPageSetAccSetting">Настройки аккаунта</v:String>
     <v:String x:Key="rPageSetConSetting">Настройки подключения</v:String>
     <v:String x:Key="rPageSetLanSetting">Настройки языка</v:String>
-    
-    
+
+
+    <v:String x:Key="rSearch_PR_NAME">Проект/ По имени</v:String>
+    <v:String x:Key="rSearch_PR_AUTHOR">Проект/ По автору</v:String>
+    <v:String x:Key="rSearch_PR_STATE">Проект/ По статусу</v:String>
+    <v:String x:Key="rSearch_TSK_THEME">Задача/ По теме</v:String>
+    <v:String x:Key="rSearch_TSK_STATE">Задача/ По статусу</v:String>
     
     <!---->
     <v:String x:Key="rSettingChange">Применить</v:String>
+
+    <v:String x:Key="rSearchNotFound">Ничего не найдено</v:String>
 
     <v:String x:Key="rSettingLanguageRU">Русский</v:String>
     <v:String x:Key="rSettingLanguageEN">English</v:String>

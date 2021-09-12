@@ -12,22 +12,53 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            <ComboBox SelectedIndex="0" Grid.Column="0" x:Name="searchSelector" Height="22" VerticalAlignment="Center" Margin="0">
-                <ComboBoxItem Name="AUTHOR" Tag="AUTHOR" Content="DynamicResource rAPBookAutor}"/>
-                <ComboBoxItem Name="BOOK" Tag="BOOK" Content="DynamicResource rAdminPanelTabBook}"/>
-                <ComboBoxItem Name="EDITION" Tag="EDITION" Content="DynamicResource rAPBookEdition}"/>
-            </ComboBox>
-            <TextBox x:Name="search" MinHeight="20" Grid.Column="1" Margin="0" Style="{DynamicResource TextBoxStyle}"/>
-            <Button x:Name="searchBtn" Grid.Column="2" Content="DynamicResource rMainTabSearch}" Style="{DynamicResource ButtonStyle}" VerticalAlignment="Center" />
+
+        <TextBlock Grid.Row="0" Margin="2 0" Padding="10" HorizontalAlignment="Center" FontSize="24" Style="{DynamicResource TextBlockMainStyle}" Text="{DynamicResource rPageMainSearch}" />
+        <Border Grid.Row="1"  Margin="6" Style="{DynamicResource BorderSearchStyle}" BorderThickness="1" CornerRadius="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox SelectedIndex="0" Grid.Column="0" x:Name="searchSelector" Height="22" VerticalAlignment="Center" Margin="0">
+                    <ComboBoxItem Name="PR_NAME" Tag="PR_NAME" Content="{DynamicResource rSearch_PR_NAME}"/>
+                    <ComboBoxItem Name="PR_AUTHOR" Tag="PR_AUTHOR" Content="{DynamicResource rSearch_PR_AUTHOR}"/>
+                    <ComboBoxItem Name="PR_STATE" Tag="PR_STATE" Content="{DynamicResource rSearch_PR_STATE}"/>
+                    <ComboBoxItem Name="TSK_THEME" Tag="TSK_THEME" Content="{DynamicResource rSearch_TSK_THEME}"/>
+                    <ComboBoxItem Name="TSK_STATE" Tag="TSK_STATE" Content="{DynamicResource rSearch_TSK_STATE}"/>
+                </ComboBox>
+                <TextBox x:Name="search" MinHeight="20" Grid.Column="1" Margin="0" Style="{DynamicResource TextBoxStyle}"/>
+                <Button x:Name="searchBtn" Grid.Column="2" Content="{DynamicResource rPageMainSearch}" Style="{DynamicResource ButtonStyle}" VerticalAlignment="Center" Click="searchBtn_Click"/>
+            </Grid>
+        </Border>
+
+
+        <Grid Grid.Row="2">
+            <TextBlock Visibility="Collapsed" x:Name="BadResultBook" Style="{DynamicResource TextBlockMainStyle}" FontSize="20" Text="{DynamicResource rSearchNotFound}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <ListBox x:Name="ListBooks" HorizontalContentAlignment="Stretch" Style="{DynamicResource ListBoxStyle}" ItemsSource="{Binding Result}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="5" Style="{DynamicResource BorderStyle}">
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Style="{DynamicResource TextBlockStyle}" TextWrapping="Wrap" FontWeight="Bold" Margin="5 0" Text="{Binding ID}" />
+                                    <TextBlock Grid.Column="1" Style="{DynamicResource TextBlockStyle}" TextWrapping="Wrap" FontWeight="Bold" Margin="5 0" Text="{Binding RESULT}"/>
+                                    <TextBlock Grid.Column="2" Style="{DynamicResource TextBlockStyle}" TextWrapping="Wrap" FontWeight="Bold" Margin="5 0" Text="{Binding INF}"/>
+                                </Grid>                                                                                                       
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
         </Grid>
     </Grid>
+    
 </Page>

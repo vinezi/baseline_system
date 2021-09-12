@@ -24,7 +24,7 @@
     <v:String x:Key="rLoginPageUsername">Username</v:String>
     <v:String x:Key="rLoginPagePassword">Password</v:String>
     <v:String x:Key="rLoginPageSignIn">Sign In</v:String>
-    <v:String x:Key="rLoginPageSignInAdmin">Sign In Admin</v:String>
+    <v:String x:Key="rLoginPageSignInAdmin">I Admin</v:String>
     <v:String x:Key="rRegistration">Registration</v:String>
 
     <v:String x:Key="rLoginPageLogin">Login</v:String>
@@ -57,10 +57,16 @@
     <v:String x:Key="rPageSetConSetting">Connection setting</v:String>
     <v:String x:Key="rPageSetLanSetting">Language setting</v:String>
 
+    <v:String x:Key="rSearch_PR_NAME">Project / By name</v:String>
+    <v:String x:Key="rSearch_PR_AUTHOR">Project / By author</v:String>
+    <v:String x:Key="rSearch_PR_STATE">Project / By status</v:String>
+    <v:String x:Key="rSearch_TSK_THEME">Task / Related</v:String>
+    <v:String x:Key="rSearch_TSK_STATE">Task / By status</v:String>
 
 
     <!---->
     <v:String x:Key="rSettingChange">Apply</v:String>
+    <v:String x:Key="rSearchNotFound">Nothing found</v:String>
 
     <v:String x:Key="rSettingLanguageRU">Русский</v:String>
     <v:String x:Key="rSettingLanguageEN">English</v:String>

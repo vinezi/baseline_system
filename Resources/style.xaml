@@ -118,6 +118,13 @@
         <!-- цвет закраски окна-->
     </Style>
 
+    <Style x:Key="BorderSearchStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="{StaticResource Border}" />
+        <!--<Setter Property="Background" Value="{StaticResource MC_DarkOpacity}"/>-->
+        <Setter Property="Background" Value="{x:Null}"/>
+        <!-- цвет закраски окна-->
+    </Style>
+
     <!--DATAGRID SETTING-->
     <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}">
         <Style.Triggers>
@@ -320,7 +327,29 @@
         <Setter Property="Foreground" Value="{StaticResource TC_Main}" />
     </Style>
 
-    <!--<Style x:Key="DataGridStyle" TargetType="DataGrid">
+
+    <Style x:Key="ListBoxStyle" TargetType="ListBox">
+        <Setter Property="Foreground" Value="{StaticResource TC_Main}" />
+        <!--цвет букв-->
+        <Setter Property="Background" Value="Transparent" />
+        <!--цвет задней подложки-->
+        <Setter Property="BorderBrush" Value="Aqua" />
+        <!--цвет всей рамки листа-->
+        <Setter Property="BorderThickness" Value="0" />
+
+        <Style.Triggers>
+            <Trigger Property="SelectedItem" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+
+        <!--<Style x:Key="DataGridStyle" TargetType="DataGrid">
         <Setter Property="Foreground" Value="White" />
         --><!--  цвет всех букв  --><!--
         <Setter Property="Background" Value="{StaticResource AC_Dark}" />
