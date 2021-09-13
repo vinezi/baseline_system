@@ -46,6 +46,8 @@
     <v:String x:Key="rConSecurity">Безопасность</v:String>
     <v:String x:Key="rConEnter">введите мне строку</v:String>
     <v:String x:Key="rConSkip">пропустить окна входа в систему</v:String>
+    <v:String x:Key="rConConMaska">строка по маске</v:String>
+    <v:String x:Key="rConConMy">своя строка</v:String>
 
     <v:String x:Key="rHallo">Привіт</v:String>
 
@@ -64,12 +66,17 @@
     <v:String x:Key="rSearch_PR_STATE">Проект/ По статусу</v:String>
     <v:String x:Key="rSearch_TSK_THEME">Задача/ По теме</v:String>
     <v:String x:Key="rSearch_TSK_STATE">Задача/ По статусу</v:String>
-    
-    <!---->
-    <v:String x:Key="rSettingChange">Применить</v:String>
 
+    <v:String x:Key="rSettingChange">Применить</v:String>
     <v:String x:Key="rSearchNotFound">Ничего не найдено</v:String>
 
     <v:String x:Key="rSettingLanguageRU">Русский</v:String>
     <v:String x:Key="rSettingLanguageEN">English</v:String>
+
+    <v:String x:Key="rPageLoginConnect">Попробуйте подключиться к стандартной базе данных</v:String>
+    
+    <v:String x:Key="rPageReset">Сброс настроек</v:String>
+    <v:String x:Key="rReadBD">Чтение</v:String>
+
+    <v:String x:Key="rDefault">Выберите окно</v:String>
 </ResourceDictionary>

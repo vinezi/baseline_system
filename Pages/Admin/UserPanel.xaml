@@ -12,31 +12,31 @@
     <Grid  Style="{DynamicResource GridStyle}">
         <DataGrid x:Name="datagrid" AutoGenerateColumns="False" Style="{DynamicResource DataGridStyle}" HeadersVisibility="Column" SelectionChanged="datagrid_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path= ID}" HeaderStyle="{DynamicResource DataGridHeaderStyle}"  Width="*" IsReadOnly="True">
+                <DataGridTextColumn Binding="{Binding Path= ID}"  Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
                         <TextBlock Text="ID" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
-                <DataGridTextColumn Binding="{Binding Path= Name}" HeaderStyle="{DynamicResource DataGridHeaderStyle}"  Width="*" IsReadOnly="True">
+                <DataGridTextColumn Binding="{Binding Path= Name}"  Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
                         <TextBlock Text="{DynamicResource rAPE_Name}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
-                <DataGridTextColumn Binding="{Binding Path= Login}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
+                <DataGridTextColumn Binding="{Binding Path= Login}" Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
                         <TextBlock Text="{DynamicResource rAPE_Login}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
-                <DataGridTextColumn Binding="{Binding Path= Password}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
+                <DataGridTextColumn Binding="{Binding Path= Password}" Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
                         <TextBlock Text="{DynamicResource rAPE_Password}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>
                 </DataGridTextColumn>
 
-                <DataGridTextColumn Binding="{Binding Path= Admin_state}" HeaderStyle="{DynamicResource DataGridHeaderStyle}" Width="*" IsReadOnly="True">
+                <DataGridTextColumn Binding="{Binding Path= Admin_state}" Width="*" IsReadOnly="True">
                     <DataGridTextColumn.Header>
                         <TextBlock Text="{DynamicResource rAPE_AdminState}" HorizontalAlignment="Stretch" />
                     </DataGridTextColumn.Header>

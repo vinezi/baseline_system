@@ -17,7 +17,6 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <!--"Data Source=.\SQLEXPRESS;Initial Catalog=Project Manager;Integrated Security=True"-->
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="0" Margin="5 0">
             <Grid>
                 <Grid.RowDefinitions>
@@ -31,8 +30,8 @@
 
                 
                 <StackPanel Grid.Row="1">
-                    <RadioButton Style="{DynamicResource RadioButtonStyle}" Checked="MaskRB_Checked" GroupName="Type" Content="maska"  />
-                    <RadioButton Style="{DynamicResource RadioButtonStyle}" Checked="MyStrRB_Checked" GroupName="Type" Content="my" />
+                    <RadioButton Style="{DynamicResource RadioButtonStyle}" Checked="MaskRB_Checked" GroupName="Type" Content="{DynamicResource rConConMaska}"/>
+                    <RadioButton Style="{DynamicResource RadioButtonStyle}" Checked="MyStrRB_Checked" GroupName="Type" Content="{DynamicResource rConConMy}" />
                 </StackPanel>
 
                 <Grid Grid.Row="2" x:Name="mask" Visibility="Collapsed">
@@ -61,7 +60,7 @@
                 
                 <TextBox x:Name="MyStrField" Grid.Row="2" Style="{DynamicResource TextBoxStyle}" Visibility="Collapsed" TextChanged="MyStrField_TextChanged"/>
 
-                <CheckBox Style="{DynamicResource CheckBoxStyle}" Grid.Row="5" Grid.Column="0" x:Name="skipCheckBox" IsThreeState="True" IsChecked="False" Height="20" Content="spik login wondows"/>
+                <CheckBox Style="{DynamicResource CheckBoxStyle}" Grid.Row="5" Grid.Column="0" x:Name="skipCheckBox" IsThreeState="True" IsChecked="False" Height="20" Content="{DynamicResource rConSkip}"/>
 
             </Grid>
         </ScrollViewer>
@@ -70,8 +69,8 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Style="{DynamicResource menuButton}" Content="accept" Click="Accept_Click" IsDefault="True"/>
-            <Button Grid.Column="1" Style="{DynamicResource menuButton}" Content="Cancel" IsCancel="True"/>
+            <Button Grid.Column="0" Style="{DynamicResource menuButton}" Content="{DynamicResource rAccept}" Click="Accept_Click" IsDefault="True"/>
+            <Button Grid.Column="1" Style="{DynamicResource menuButton}" Content="{DynamicResource rCancel}" IsCancel="True"/>
         </Grid>
     </Grid>
 </Window>

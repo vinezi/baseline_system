@@ -13,15 +13,23 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="read bd" TextWrapping="Wrap" Style="{StaticResource TextBlockMainStyle}" FontSize="25"/>
-            <Button Style="{DynamicResource menuButton}" Grid.Row="1" Content="Reset Setting" Click="Reset_Click" />
-            <Button Style="{DynamicResource menuButton}" Grid.Row="2" Content="EXIT" Click="Exit_Click" />
+            <TextBlock Grid.Row="0" Text="{DynamicResource rReadBD}" TextWrapping="Wrap" Style="{StaticResource TextBlockMainStyle}" FontSize="25"/>
+            <Button Style="{DynamicResource menuButton}" Grid.Row="1" Content="{DynamicResource rPageReset}" Click="Reset_Click" />
+            <Button Style="{DynamicResource menuButton}" Grid.Row="2" Content="{DynamicResource rPageMainExit}" Click="Exit_Click" />
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <ComboBox SelectedIndex="0" Grid.Column="1" x:Name="cBox" Height="22" VerticalAlignment="Center" Margin="0" SelectionChanged="cBox_SelectionChanged"/>
+            <DataGrid IsReadOnly="True" Style="{DynamicResource DataGridStyle}" HeadersVisibility="Column" x:Name="dataGrid" Grid.Row="1"/>
         </Grid>
     </Grid>
-</Page>
+</Page> 

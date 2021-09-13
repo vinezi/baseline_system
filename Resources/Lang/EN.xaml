@@ -45,6 +45,8 @@
     <v:String x:Key="rConSecurity">Security</v:String>
     <v:String x:Key="rConEnter">enter me string</v:String>
     <v:String x:Key="rConSkip">skip login windows</v:String>
+    <v:String x:Key="rConConMaska">maska</v:String>
+    <v:String x:Key="rConConMy">my</v:String>
 
     <v:String x:Key="rHallo">Hallo</v:String>
 
@@ -63,12 +65,17 @@
     <v:String x:Key="rSearch_TSK_THEME">Task / Related</v:String>
     <v:String x:Key="rSearch_TSK_STATE">Task / By status</v:String>
 
-
-    <!---->
     <v:String x:Key="rSettingChange">Apply</v:String>
     <v:String x:Key="rSearchNotFound">Nothing found</v:String>
 
     <v:String x:Key="rSettingLanguageRU">Русский</v:String>
     <v:String x:Key="rSettingLanguageEN">English</v:String>
 
+    <v:String x:Key="rPageLoginConnect">Try to connect to the standard database</v:String>
+
+
+    <v:String x:Key="rPageReset">Reset setting</v:String>
+    <v:String x:Key="rReadBD">Reading BD</v:String>
+
+    <v:String x:Key="rDefault">Select tab</v:String>
 </ResourceDictionary>

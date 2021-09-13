@@ -9,6 +9,6 @@
       Title="PageDefault">
 
     <Grid>
-        <TextBlock Style="{DynamicResource TextBlockMainStyle}" Text="Select tab" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Style="{DynamicResource TextBlockMainStyle}" Text="{DynamicResource rDefault}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Page>

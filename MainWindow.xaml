@@ -9,6 +9,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Style="{DynamicResource GridStyle}">
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Source="Pages/PageLogin.xaml" Grid.Row="1"/>
-        <TextBlock x:Name="Version" Opacity="0.5" Text="v 0.7.1t" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Right" Margin="10" />
+        <TextBlock x:Name="Version" Opacity="0.5" Text="v 0.8.0t" VerticalAlignment="Bottom" Foreground="Red" HorizontalAlignment="Right" Margin="10" />
     </Grid>
 </Window>

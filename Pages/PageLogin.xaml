@@ -60,6 +60,6 @@
                 </Grid>
             </Border>
         </StackPanel>
-        <Button x:Name="defaultDB" Style="{DynamicResource ButtonStyle}" Visibility="Collapsed" Content="Try to connect to the standard database" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 10" Click="DefConect_Click"/>
+        <Button x:Name="defaultDB" Style="{DynamicResource ButtonStyle}" Visibility="Collapsed" Content="{DynamicResource rPageLoginConnect}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 10" Click="DefConect_Click"/>
     </Grid>
 </Page>
